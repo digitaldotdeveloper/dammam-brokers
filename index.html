@@ -224,10 +224,10 @@ details.more .inner{padding:0 16px 16px;display:grid;gap:10px}
   var T = {
     en:{
       appName:'EasyPak Scraper', user:'Username', pass:'Password', loginErr:'Wrong username or password.', signIn:'Sign in', signOut:'Sign out', langBtn:'العربية',
-      h1:'Brokers near the new branch',
+      h1:'Brokers for the Dammam warehouse',
       statOffices:'offices', statContacted:'contacted', statInterested:'interested',
       tAll:'All', tTodo:'To contact', tNoanswer:'No answer', tInterested:'Interested', tDeclined:'Not interested',
-      top:'TOP {n}', km:'km', fal:'✓ FAL {n}', commercial:'Commercial / warehouses',
+      top:'TOP {n}', km:'km', fal:'✓ FAL {n}', commercial:'Warehouses / industrial', fromAd:'Number from ad: confirm',
       call:'Call', wa:'WhatsApp', map:'Map',
       called:'Called {n}×', messaged:'WhatsApp {n}×', last:'Last {d}',
       rNoanswer:'No answer', rInterested:'Interested', rDeclined:'Not interested',
@@ -241,10 +241,10 @@ details.more .inner{padding:0 16px 16px;display:grid;gap:10px}
     },
     ar:{
       appName:'EasyPak Scraper', user:'اسم المستخدم', pass:'كلمة المرور', loginErr:'اسم المستخدم أو كلمة المرور غير صحيحة.', signIn:'دخول', signOut:'خروج', langBtn:'English',
-      h1:'وسطاء قرب الفرع الجديد',
+      h1:'وسطاء لتأجير مستودع الدمام',
       statOffices:'مكتب', statContacted:'تم التواصل', statInterested:'مهتم',
       tAll:'الكل', tTodo:'للتواصل', tNoanswer:'لم يرد', tInterested:'مهتم', tDeclined:'غير مهتم',
-      top:'الأفضل {n}', km:'كم', fal:'✓ فال {n}', commercial:'تجاري / مستودعات',
+      top:'الأفضل {n}', km:'كم', fal:'✓ فال {n}', commercial:'مستودعات / صناعي', fromAd:'الرقم من إعلان: تأكد منه',
       call:'اتصال', wa:'واتساب', map:'الخريطة',
       called:'اتصال {n}×', messaged:'واتساب {n}×', last:'آخر تواصل {d}',
       rNoanswer:'لم يرد', rInterested:'مهتم', rDeclined:'غير مهتم',
@@ -353,7 +353,7 @@ details.more .inner{padding:0 16px 16px;display:grid;gap:10px}
     fetch('data.json?t=' + Date.now(), {cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
       places = (j.places || []).map(function(p){
         var o = {id:'g_' + String(p.id).replace(/[^\w:.-]/g, ''), name:p.name, phone:normPhone(p.phone), rating:p.rating,
-          lat:p.lat, lng:p.lng, mapUrl:p.mapUrl, category:p.category || '', fal:p.fal || null, commercial:!!p.commercial,
+          lat:p.lat, lng:p.lng, mapUrl:p.mapUrl, category:p.category || '', fal:p.fal || null, commercial:!!p.commercial, fromAd:!!p.fromAd,
           why:p.why || null, links:p.links || {}, rank:p.rank || 99};
         o.d = (typeof o.lat === 'number') ? km(BRANCH, o) : null;
         return o;
@@ -409,10 +409,11 @@ details.more .inner{padding:0 16px 16px;display:grid;gap:10px}
     if(s.lastAt) sub.appendChild(el('span', null, t('last', {d:when(s.lastAt)})));
     left.appendChild(sub);
     if(o.why) left.appendChild(el('p', 'why', o.why[lang] || o.why.en));
-    if(o.fal || o.commercial){
+    if(o.fal || o.commercial || o.fromAd){
       var bd = el('div', 'badges');
       if(o.fal) bd.appendChild(el('span', 'badge fal num', t('fal', {n:o.fal})));
       if(o.commercial) bd.appendChild(el('span', 'badge', t('commercial')));
+      if(o.fromAd) bd.appendChild(el('span', 'badge', t('fromAd')));
       left.appendChild(bd);
     }
     head.appendChild(left);
@@ -420,7 +421,7 @@ details.more .inner{padding:0 16px 16px;display:grid;gap:10px}
     c.appendChild(head);
 
     var go = el('div', 'go');
-    var call = el('a', 'btn call'); call.href = 'tel:+' + o.phone;
+    var call = el('a', 'btn call'); call.href = /^966(9200|800)/.test(o.phone) ? 'tel:' + localPhone(o.phone) : 'tel:+' + o.phone;
     call.innerHTML = ICON_CALL; call.appendChild(document.createTextNode(t('call')));
     if(s.calls) call.appendChild(el('span', 'cnt', String(s.calls)));
     call.addEventListener('click', function(){ record(o, 'call'); setTimeout(render, 300); });
