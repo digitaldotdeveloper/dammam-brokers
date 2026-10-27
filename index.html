@@ -4,160 +4,149 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>Dammam Warehouse Brokers</title>
+<title>EasyPak Scraper</title>
+<meta name="description" content="Real estate brokers near the new EasyPak Dammam branch. Call or WhatsApp in one tap.">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EasyPak">
+<meta property="og:title" content="EasyPak Scraper">
+<meta property="og:description" content="Real estate brokers near the new Dammam branch. Call or WhatsApp in one tap.">
+<meta property="og:url" content="https://digitaldotdeveloper.github.io/dammam-brokers/">
+<meta property="og:image" content="https://digitaldotdeveloper.github.io/dammam-brokers/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EasyPak Scraper: real estate brokers near the new Dammam branch">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EasyPak Scraper">
+<meta name="twitter:image" content="https://digitaldotdeveloper.github.io/dammam-brokers/og.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="EasyPak">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: one narrow column, phone first. Slate header band, lime only for primary actions. */
+/* Layout: light only. White top bar with the logo, one column of contact cards, two big buttons per card. */
 :root{
-  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#eaeef2;
-  --ink:#1b2530; --ink-2:#4a5c73; --ink-3:#7d8a9b; --line:#dde3ea;
-  --band:#2f3d4e; --band-ink:#ffffff; --band-ink-2:#c4d0de;
-  --lime:#b4da3c; --lime-ink:#1f2a08; --lime-text:#5f7d0e;
+  color-scheme:light;
+  --bg:#f4f6f8; --surface:#ffffff; --surface-2:#eef1f4;
+  --ink:#1b2530; --ink-2:#4a5c73; --ink-3:#808c9c; --line:#e1e6ec;
+  --lime:#b4da3c; --lime-ink:#1f2a08; --lime-text:#5f7d0e; --lime-soft:#f1f8dc;
+  --call:#2f3d4e; --call-ink:#ffffff;
   --wa:#1f9d55; --wa-ink:#ffffff;
-  --s-new:#7d8a9b; --s-noanswer:#c27c0e; --s-called:#2f6fb8; --s-interested:#1f9d55; --s-declined:#b8423a;
+  --s-noanswer:#c27c0e; --s-interested:#1f9d55; --s-declined:#b8423a;
   --focus:#2f6fb8;
   --f-body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --r:14px; --r-sm:10px;
 }
 :root[dir="rtl"]{ --f-body:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,Tahoma,sans-serif; }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#11171e; --surface:#19212b; --surface-2:#222c38;
-  --ink:#e8edf2; --ink-2:#a9b6c6; --ink-3:#7f8da0; --line:#2c3846;
-  --band:#0c1218; --band-ink:#f3f6f9; --band-ink-2:#9fb0c3;
-  --lime-text:#bfe24f; --wa:#25b463; --wa-ink:#06130b;
-  --s-new:#8e9bad; --s-noanswer:#e2a33a; --s-called:#5e9be0; --s-interested:#3fc77a; --s-declined:#e2716a;
-  --focus:#8fc0ff; color-scheme:dark;
-}}
 *,*::before,*::after{box-sizing:border-box}
 html,body{margin:0}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 [hidden]{display:none!important}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
-.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{text-wrap:balance;margin:0;line-height:1.3}
-h1{font-weight:700;letter-spacing:-.01em}
-h2{font-size:1.15rem;font-weight:700}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;-webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;line-height:1.3;text-wrap:balance}
 a{color:inherit}
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
-.muted{color:var(--ink-3)}
 .num{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
+.logo{height:30px;width:auto;display:block}
+@media (max-width:380px){.logo{height:24px}}
 
-.brand{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--ink-2);font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
-.brand i{width:28px;height:4px;background:var(--lime);border-radius:2px;display:block}
-.field{display:grid;gap:6px;min-width:0}
-.field label,.label{font-size:.85rem;color:var(--ink-2);font-weight:500}
-.input{width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px;min-height:44px}
-textarea.input{min-height:72px;resize:vertical}
-.err{color:var(--s-declined);font-size:.9rem;margin:0}
-.ok{color:var(--s-interested);font-size:.9rem;margin:0}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:8px 14px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--surface);font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 14px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--surface);font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap}
 .btn:hover{background:var(--surface-2)}
-.btn:disabled{opacity:.5;cursor:default}
+.btn-sm{min-height:36px;padding:4px 12px;font-size:.88rem}
 .btn-primary{background:var(--lime);color:var(--lime-ink);border-color:transparent}
-.btn-primary:hover{background:var(--lime);filter:brightness(.95)}
-.btn-wa{background:var(--wa);color:var(--wa-ink);border-color:transparent}
-.btn-wa:hover{background:var(--wa);filter:brightness(.95)}
-.btn-ghost{background:transparent;border-color:transparent;color:var(--ink-2)}
-.btn-sm{min-height:34px;padding:4px 10px;font-size:.85rem}
-.btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
-.lang{min-height:34px;padding:4px 12px;border-radius:999px;font-size:.85rem}
+.btn-primary:hover{background:var(--lime);filter:brightness(.96)}
+.btn svg{width:18px;height:18px;flex:none}
+.input{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px;min-height:44px}
 
 /* Login */
 .login{min-height:100vh;display:grid;place-items:center;padding-block:32px}
-.login-card{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:grid;gap:16px}
+.login-card{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;display:grid;gap:14px}
 .login-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.login-card h1{font-size:1.2rem;color:var(--ink-2);font-weight:600}
+.field{display:grid;gap:6px}
+.field label{font-size:.85rem;color:var(--ink-2);font-weight:500}
+.err{color:var(--s-declined);font-size:.9rem;margin:0}
 
-/* Header band */
-.band{background:var(--band);color:var(--band-ink)}
-.band .wrap{padding-block:20px;display:grid;gap:10px}
-.band-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.band-top .tools{display:flex;gap:6px;align-items:center}
-.band .brand{color:var(--band-ink-2)}
-.band h1{font-size:1.55rem}
-.band p{margin:0;color:var(--band-ink-2);max-width:62ch}
-.band .btn{background:transparent;color:var(--band-ink-2);border-color:rgba(255,255,255,.18)}
-.band .btn:hover{color:var(--band-ink)}
-.branch{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:.9rem;color:var(--band-ink-2)}
-.branch b{color:var(--band-ink);font-weight:600}
-.branch a{color:var(--lime);font-weight:600}
+/* Top bar */
+.top{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-block:10px}
+.top .tools{display:flex;gap:6px}
 
-main .wrap{padding-block:20px 56px;display:grid;gap:26px}
-section{display:grid;gap:12px}
-.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px 12px;flex-wrap:wrap}
-.hint{margin:0;color:var(--ink-2);font-size:.92rem;max-width:64ch}
+main .wrap{padding-block:16px 48px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+main .wrap > *{min-width:0}
+.summary{display:flex;justify-content:space-between;align-items:center;gap:8px 12px;flex-wrap:wrap}
+.summary h1{font-size:1.2rem}
+.stats{display:flex;gap:14px;font-size:.88rem;color:var(--ink-2)}
+.stats b{color:var(--ink);font-variant-numeric:tabular-nums}
 
-/* Finder panel */
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:14px}
-.terms{display:flex;flex-wrap:wrap;gap:6px}
-.term{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2);cursor:pointer;font-size:.9rem;min-height:36px}
-.term input{accent-color:var(--lime-text);margin:0}
-.term:has(input:checked){border-color:var(--lime-text);background:var(--surface)}
-.find-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
-.find-row .field{flex:0 0 auto}
-.find-row select{min-height:44px}
-.find-row .btn-primary{flex:1 1 200px;min-height:44px}
-.progress{height:4px;border-radius:2px;background:var(--surface-2);overflow:hidden}
-.progress i{display:block;height:100%;width:0;background:var(--lime);transition:width .3s}
-details.settings summary{cursor:pointer;color:var(--ink-2);font-size:.88rem;font-weight:500;list-style:none;display:inline-flex;gap:6px;align-items:center}
-details.settings summary::-webkit-details-marker{display:none}
-details.settings summary::before{content:"⚙"}
-.key-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.key-row .input{flex:1 1 240px}
-.key-state{font-size:.85rem}
+/* Filters */
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;min-width:0;padding-block:2px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.88rem;font-weight:500;cursor:pointer;min-height:36px}
+.tab[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab .n{opacity:.7;font-variant-numeric:tabular-nums;margin-inline-start:4px}
+.bar select{min-height:36px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.88rem}
 
-/* Chips */
-.chips{display:flex;gap:6px;flex-wrap:wrap}
-.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.85rem;cursor:pointer;min-height:34px}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--c,var(--ink-3));flex:none}
-.chip .n{font-variant-numeric:tabular-nums;opacity:.75}
-
-/* Add form */
-details.add{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
-details.add summary{cursor:pointer;padding:13px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
-details.add summary::-webkit-details-marker{display:none}
-details.add summary::after{content:"+";font-size:1.3rem;color:var(--lime-text)}
-details.add[open] summary::after{content:"−"}
-.add-form{display:grid;gap:12px;padding:0 16px 16px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:540px){.row2{grid-template-columns:1fr}}
-
-/* List */
-.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.toolbar .input{flex:1 1 200px;min-height:40px}
-.toolbar select.input{flex:0 0 auto;width:auto}
+/* Cards */
 .list{display:grid;gap:10px}
-.office{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;gap:10px;border-inline-start:4px solid var(--c,var(--s-new))}
-.office.top{border-color:var(--lime-text);border-inline-start-color:var(--c,var(--s-new))}
-.office.top .actions .btn{min-height:48px;font-size:1rem}
-.pick{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.03em;color:var(--lime-text);margin-bottom:2px}
-.o-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.o-name{font-weight:700;font-size:1.05rem;min-width:0;overflow-wrap:anywhere}
-.o-meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.85rem;color:var(--ink-3);margin-top:2px}
-.o-meta .stars{color:var(--ink-2);font-weight:600}
-.dist{font-weight:700;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
-.phone{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.phone .num{font-size:1.05rem;font-weight:600;user-select:all}
-.tag{font-size:.75rem;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-2)}
-.tag.fit{background:var(--lime);color:var(--lime-ink);font-weight:600}
-.actions{display:flex;gap:8px;flex-wrap:wrap}
-.actions .btn{flex:1 1 auto}
-.o-foot{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:start}
-.o-foot select{min-height:38px;padding:4px 8px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--surface-2)}
-.o-foot textarea{min-height:38px;padding:6px 10px}
-@media (max-width:540px){.o-foot{grid-template-columns:1fr}}
-.del{display:flex;gap:6px;align-items:center;justify-content:flex-end;font-size:.85rem}
-.empty{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:22px 18px;display:grid;gap:6px}
-.empty p{margin:0;color:var(--ink-2)}
-.note{font-size:.85rem;color:var(--ink-3);margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:12px}
+.card.top1{border-color:var(--lime-text);box-shadow:0 0 0 1px var(--lime-text) inset}
+.c-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.c-name{font-size:1.02rem;font-weight:700;overflow-wrap:anywhere;min-width:0}
+.pick{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:var(--lime-text);background:var(--lime-soft);border-radius:6px;padding:1px 7px;margin-bottom:4px}
+.c-sub{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:.85rem;color:var(--ink-3);margin-top:2px}
+.c-sub .star{color:var(--ink-2);font-weight:600}
+.c-sub .done{color:var(--ink-2)}
+.why{font-size:.88rem;color:var(--ink-2);margin:4px 0 0}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.badge{font-size:.75rem;font-weight:600;border-radius:6px;padding:2px 8px;background:var(--surface-2);color:var(--ink-2)}
+.badge.fal{background:var(--lime-soft);color:var(--lime-text)}
+.links{display:flex;gap:4px 12px;flex-wrap:wrap;font-size:.85rem}
+.links a{color:var(--ink-2);font-weight:500;text-underline-offset:3px}
+.dist{font-size:.9rem;font-weight:700;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.go{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:8px}
+.go .btn{min-width:0;overflow:hidden}
+.go .btn{min-height:50px;font-size:1rem;border:0}
+.go .call{background:var(--call);color:var(--call-ink)}
+.go .call:hover{background:var(--call);filter:brightness(1.15)}
+.go .wa{background:var(--wa);color:var(--wa-ink)}
+.go .wa:hover{background:var(--wa);filter:brightness(1.06)}
+.go .map{background:var(--surface-2);color:var(--ink-2);padding-inline:14px}
+.go .btn[aria-disabled="true"]{opacity:.35;pointer-events:none}
+.go .cnt{font-size:.78rem;font-weight:600;background:rgba(255,255,255,.22);border-radius:999px;padding:0 7px;min-width:22px;text-align:center}
+.result{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.res{padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.85rem;cursor:pointer;min-height:34px;color:var(--ink-2)}
+.res[aria-pressed="true"]{color:#fff;border-color:transparent;background:var(--c)}
+.note-btn{margin-inline-start:auto;background:none;border:0;color:var(--ink-3);font-size:.85rem;cursor:pointer;padding:6px 4px;min-height:34px}
+.note-btn.has{color:var(--ink-2);font-weight:600}
+.note{width:100%;min-height:60px;resize:vertical;border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 10px;background:var(--surface-2)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:22px 18px;text-align:center;color:var(--ink-2)}
+
+/* Bottom: history, add, export */
+details.more{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.more summary{cursor:pointer;padding:13px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"+";font-size:1.2rem;color:var(--ink-3)}
+details.more[open] summary::after{content:"−"}
+details.more .inner{padding:0 16px 16px;display:grid;gap:10px}
+.log{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.log li{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;padding:8px 0;border-top:1px solid var(--line);font-size:.88rem}
+.log li:first-child{border-top:0}
+.log time{color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.log .what{min-width:0;overflow-wrap:anywhere}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+.foot{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .toast{position:fixed;inset-inline:0;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;pointer-events:none;z-index:20}
-.toast span{background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:.9rem}
-@media (prefers-reduced-motion:reduce){.progress i{transition:none}}
+.toast span{background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:.9rem}
 </style>
 </head>
 <body>
@@ -165,10 +154,10 @@ details.add[open] summary::after{content:"−"}
 <div id="loginView" class="wrap login">
   <form class="login-card" id="loginForm" autocomplete="off">
     <div class="login-top">
-      <div class="brand"><i></i><span data-i18n="brand"></span></div>
-      <button class="btn lang" type="button" data-lang-toggle></button>
+      <img class="logo" src="assets/logo-dark.png" alt="EasyPak" width="769" height="232">
+      <button class="btn btn-sm" type="button" data-lang-toggle></button>
     </div>
-    <h1 style="font-size:1.4rem" data-i18n="appName"></h1>
+    <h1 data-i18n="appName"></h1>
     <div class="field"><label for="lu" data-i18n="user"></label><input class="input" id="lu" dir="ltr" autocapitalize="none" spellcheck="false"></div>
     <div class="field"><label for="lp" data-i18n="pass"></label><input class="input" id="lp" type="password" dir="ltr"></div>
     <p class="err" id="loginErr" data-i18n="loginErr" hidden></p>
@@ -177,100 +166,45 @@ details.add[open] summary::after{content:"−"}
 </div>
 
 <div id="appView" hidden>
-  <header class="band">
+  <header class="top">
     <div class="wrap">
-      <div class="band-top">
-        <div class="brand"><i></i><span data-i18n="brand"></span></div>
-        <div class="tools">
-          <button class="btn lang" type="button" data-lang-toggle></button>
-          <button class="btn btn-sm" id="logout" type="button" data-i18n="signOut"></button>
-        </div>
-      </div>
-      <h1 data-i18n="h1"></h1>
-      <p data-i18n="lead"></p>
-      <div class="branch">
-        <span><span data-i18n="branchLabel"></span> <b data-i18n="branchName"></b></span>
-        <span class="num">26.39547, 50.00667</span>
-        <a href="https://maps.app.goo.gl/1Lxrki9YgJsmM2ZC6" target="_blank" rel="noopener" data-i18n="openMap"></a>
+      <img class="logo" src="assets/logo-dark.png" alt="EasyPak" width="769" height="232">
+      <div class="tools">
+        <button class="btn btn-sm" type="button" data-lang-toggle></button>
+        <button class="btn btn-sm" id="logout" type="button" data-i18n="signOut"></button>
       </div>
     </div>
   </header>
 
   <main>
     <div class="wrap">
-      <section aria-labelledby="h-find">
-        <h2 id="h-find" data-i18n="findH"></h2>
-        <div class="panel">
-          <p class="hint" data-i18n="findHint"></p>
-          <div class="field">
-            <span class="label" data-i18n="terms"></span>
-            <div class="terms" id="terms"></div>
-          </div>
-          <div class="find-row">
-            <div class="field">
-              <label for="radius" data-i18n="within"></label>
-              <select class="input" id="radius">
-                <option value="2000">2 km</option>
-                <option value="5000" selected>5 km</option>
-                <option value="10000">10 km</option>
-                <option value="20000">20 km</option>
-              </select>
-            </div>
-            <button class="btn btn-primary" id="findBtn" type="button" data-i18n="findBtn"></button>
-          </div>
-          <div class="progress" id="progress" hidden><i id="progressBar"></i></div>
-          <p class="note" id="findStatus" aria-live="polite"></p>
-          <details class="settings" id="settings">
-            <summary data-i18n="settings"></summary>
-            <div class="field" style="margin-top:10px">
-              <label for="apiKey" data-i18n="keyLabel"></label>
-              <div class="key-row">
-                <input class="input num" id="apiKey" type="password" autocomplete="off" spellcheck="false" placeholder="AIza...">
-                <button class="btn" id="saveKey" type="button" data-i18n="keySave"></button>
-              </div>
-              <p class="note" data-i18n="keyHint"></p>
-              <p class="key-state" id="keyState"></p>
-            </div>
-          </details>
-        </div>
-      </section>
+      <div class="summary">
+        <h1 data-i18n="h1"></h1>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="bar">
+        <div class="tabs" id="tabs" role="group"></div>
+      </div>
+      <div class="list" id="list"></div>
 
-      <section aria-labelledby="h-list">
-        <div class="sec-head">
-          <h2 id="h-list" data-i18n="listH"></h2>
-          <span class="muted" id="countLine"></span>
-        </div>
-        <div class="chips" id="filters" role="group"></div>
-        <div class="toolbar">
-          <input class="input" id="search" type="search" data-i18n-ph="searchPh">
-          <select class="input" id="sort" aria-label="Sort">
-            <option value="best" data-i18n="sortBest"></option>
-            <option value="dist" data-i18n="sortDist"></option>
-            <option value="rating" data-i18n="sortRating"></option>
-            <option value="status" data-i18n="sortStatus"></option>
-            <option value="recent" data-i18n="sortRecent"></option>
-          </select>
-          <button class="btn" id="exportBtn" type="button" data-i18n="export"></button>
-        </div>
-        <div class="list" id="list"></div>
+      <details class="more" id="historyBox">
+        <summary><span data-i18n="history"></span></summary>
+        <div class="inner"><ul class="log" id="log"></ul></div>
+      </details>
 
-        <details class="add" id="addBox">
-          <summary data-i18n="addSummary"></summary>
-          <form class="add-form" id="addForm">
+      <details class="more">
+        <summary><span data-i18n="addSummary"></span></summary>
+        <form class="inner" id="addForm">
+          <div class="row2">
             <div class="field"><label for="fName" data-i18n="fName"></label><input class="input" id="fName" required></div>
-            <div class="row2">
-              <div class="field"><label for="fPhone" data-i18n="fPhone"></label><input class="input num" id="fPhone" inputmode="tel" placeholder="05xxxxxxxx"></div>
-              <div class="field"><label for="fArea" data-i18n="fArea"></label><input class="input" id="fArea"></div>
-            </div>
-            <div class="field"><label for="fMap" data-i18n="fMap"></label><input class="input num" id="fMap" placeholder="https://www.google.com/maps/place/...  /  26.40, 50.01"></div>
-            <p class="note" data-i18n="mapHint"></p>
-            <div class="field"><label for="fNotes" data-i18n="fNotes"></label><textarea class="input" id="fNotes"></textarea></div>
-            <p class="err" id="addErr" hidden></p>
-            <button class="btn btn-primary" type="submit" data-i18n="saveOffice"></button>
-          </form>
-        </details>
-        <p class="note" data-i18n="storageNote"></p>
-      </section>
+            <div class="field"><label for="fPhone" data-i18n="fPhone"></label><input class="input num" id="fPhone" inputmode="tel" placeholder="05xxxxxxxx" required></div>
+          </div>
+          <p class="err" id="addErr" hidden></p>
+          <button class="btn btn-primary" type="submit" data-i18n="saveOffice"></button>
+        </form>
+      </details>
+
+      <div class="foot"><button class="btn btn-sm" id="exportBtn" type="button" data-i18n="export"></button></div>
     </div>
   </main>
 </div>
@@ -281,142 +215,84 @@ details.add[open] summary::after{content:"−"}
 (function(){
   var BRANCH = {lat:26.3954736, lng:50.0066698};
   var USER = 'admin', PASS = '123';
-  var K_AUTH = 'ep-auth', K_LANG = 'ep-lang', K_KEY = 'ep-places-key', K_DATA = 'ep-offices-v2';
-  var TERMS = [
-    {q:'مكاتب تسويق عقاري', on:true},
-    {q:'مكتب عقار', on:true},
-    {q:'تأجير مستودعات', on:true},
-    {q:'عقارات تجارية', on:true},
-    {q:'real estate agency', on:true},
-    {q:'وسيط عقاري', on:false}
-  ];
+  var K_AUTH = 'ep-auth', K_LANG = 'ep-lang', K_DATA = 'ep-offices-v3', K_LOG = 'ep-log-v1';
   var FIT_RE = /مستودع|مستودعات|تجاري|صناعي|warehouse|commercial|industrial|logistic/i;
-  var FIELDS = 'places.id,places.displayName,places.formattedAddress,places.shortFormattedAddress,places.location,places.nationalPhoneNumber,places.internationalPhoneNumber,places.rating,places.userRatingCount,places.googleMapsUri,places.websiteUri,places.businessStatus,nextPageToken';
+  var ICON_CALL = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>';
+  var ICON_WA = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.300-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.300.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3z"/></svg>';
+  var ICON_MAP = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
 
   var T = {
     en:{
-      brand:'EasyPak · Dammam', appName:'Dammam Warehouse Brokers', user:'Username', pass:'Password',
-      loginErr:'Wrong username or password. Try again.', signIn:'Sign in', signOut:'Sign out', langBtn:'العربية',
-      h1:'Brokers to rent out the old warehouse',
-      lead:'Real estate offices near our new branch that can market the old Dammam warehouse and find a tenant.',
-      branchLabel:'New branch:', branchName:'King Fahd Suburb, Dammam', openMap:'Open in Maps ↗',
-      findH:'Find offices on Google Maps',
-      findHint:'Searches Google Maps around the new branch and adds every office it finds to your list, with phone, rating and distance. Your call status and notes are kept when you search again.',
-      terms:'Search terms', within:'Within', findBtn:'Search Google Maps',
-      searching:'Searching “{q}”… {n} offices so far', found:'Done. {n} offices within {r} km, {new} new.', foundNone:'Google found no offices within {r} km. Try a wider range.',
-      settings:'Settings', keyLabel:'Google Maps API key', keySave:'Save key',
-      keyHint:'Saved only in this browser, never in the website code. The key needs “Places API (New)” enabled. In Google Cloud, restrict it to digitaldotdeveloper.github.io.',
-      keyOn:'Key saved in this browser.', keyOff:'No key yet. Add one to search Google Maps.', keySaved:'Key saved', keyCleared:'Key removed',
-      needKey:'Add your Google Maps API key first, under Settings below.',
-      e403:'Google refused the key. Check that Places API (New) is enabled and the key allows this website.',
-      e400:'Google rejected the request: {m}', e429:'Google’s usage limit was reached. Wait a minute and search again.',
-      eNet:'Couldn’t reach Google. Check the internet connection and try again.', eOther:'Google returned an error: {m}',
-      listH:'Contact list', count:'{n} offices · {p} with phone', all:'All',
-      sNew:'Not contacted', sNoanswer:'No answer', sCalled:'Called', sInterested:'Interested', sDeclined:'Not interested',
-      searchPh:'Search by name, area or number',
-      sortBest:'Best match', sortDist:'Nearest', sortRating:'Top rated', sortStatus:'By status', sortRecent:'Recently updated',
-      export:'Export CSV', exported:'CSV downloaded',
-      emptyH:'No offices yet', emptyP:'Press “Search Google Maps” above to pull real estate offices around the new branch.',
-      noResults:'No offices match this search or filter.',
-      km:'km', mobile:'Mobile · likely WhatsApp', landline:'Landline', copy:'Copy', copied:'Number copied', selected:'Number selected. Copy it manually.',
-      call:'Call', wa:'WhatsApp', map:'Map ↗', web:'Website ↗', notesPh:'Call notes', noPhone:'No phone listed on Google Maps. Open the map to check.',
-      topPick:'★ CONTACT FIRST · #{n}',
-      reviews:'{n} reviews', fit:'Warehouse / commercial', manual:'Added manually', updated:'Updated {d}',
-      del:'Delete', delQ:'Delete this office?', cancel:'Cancel', deleted:'Office deleted',
-      statusSaved:'Status updated', noteSaved:'Note saved',
-      addSummary:'Add an office manually', fName:'Office name', fPhone:'Mobile or phone', fArea:'District', fMap:'Google Maps link or coordinates',
-      mapHint:'For the distance, paste a full Google Maps link or coordinates. Short maps.app.goo.gl links are saved without a distance.',
-      fNotes:'Notes', saveOffice:'Save office', added:'Office added',
-      eName:'Enter the office name.', ePhone:'The number looks incomplete. Write it like 0551234567 or 0138123456.', eDup:'This number is already in the list.',
-      storageNote:'The list is saved in this browser on this device. Use Export CSV to share it with the team.',
-      eStore:'This browser blocked saving. Turn off private browsing and try again.'
+      appName:'EasyPak Scraper', user:'Username', pass:'Password', loginErr:'Wrong username or password.', signIn:'Sign in', signOut:'Sign out', langBtn:'العربية',
+      h1:'Brokers near the new branch',
+      statOffices:'offices', statContacted:'contacted', statInterested:'interested',
+      tAll:'All', tTodo:'To contact', tNoanswer:'No answer', tInterested:'Interested', tDeclined:'Not interested',
+      top:'TOP {n}', km:'km', fal:'✓ FAL {n}', commercial:'Commercial / warehouses',
+      call:'Call', wa:'WhatsApp', map:'Map',
+      called:'Called {n}×', messaged:'WhatsApp {n}×', last:'Last {d}',
+      rNoanswer:'No answer', rInterested:'Interested', rDeclined:'Not interested',
+      note:'Note', noteEdit:'Note ✓', notePh:'What did they say?',
+      empty:'No offices here. Try a wider distance or another tab.', loading:'Loading…', loadErr:'Couldn’t load the list. Reload the page.',
+      history:'History', historyEmpty:'Calls and WhatsApp messages will show here.',
+      aCall:'Called', aWa:'WhatsApp', aNoanswer:'No answer', aInterested:'Interested', aDeclined:'Not interested', aCleared:'Result cleared', aNote:'Note', aAdded:'Added',
+      addSummary:'Add an office', fName:'Office name', fPhone:'Mobile or phone', saveOffice:'Save', added:'Office added',
+      eName:'Enter the office name.', ePhone:'Write the number like 0551234567.', eDup:'This number is already in the list.',
+      export:'Export CSV', exported:'CSV downloaded', saved:'Saved', eStore:'This browser blocked saving. Turn off private browsing.'
     },
     ar:{
-      brand:'إيزي باك · الدمام', appName:'وسطاء مستودع الدمام', user:'اسم المستخدم', pass:'كلمة المرور',
-      loginErr:'اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة أخرى.', signIn:'دخول', signOut:'تسجيل الخروج', langBtn:'English',
-      h1:'وسطاء لتأجير المستودع القديم',
-      lead:'مكاتب تسويق عقاري قريبة من فرعنا الجديد، نتواصل معها لتسويق المستودع القديم في الدمام وإيجاد مستأجر.',
-      branchLabel:'الفرع الجديد:', branchName:'ضاحية الملك فهد، الدمام', openMap:'فتح في الخريطة ↗',
-      findH:'ابحث عن المكاتب في خرائط Google',
-      findHint:'يبحث في خرائط Google حول الفرع الجديد ويضيف كل مكتب للقائمة مع الرقم والتقييم والمسافة. حالة التواصل والملاحظات تبقى محفوظة عند البحث مرة أخرى.',
-      terms:'كلمات البحث', within:'ضمن مسافة', findBtn:'ابحث في خرائط Google',
-      searching:'جارٍ البحث عن «{q}»… {n} مكتب حتى الآن', found:'تم. {n} مكتب ضمن {r} كم، منها {new} جديد.', foundNone:'لم يجد Google مكاتب ضمن {r} كم. جرّب مسافة أوسع.',
-      settings:'الإعدادات', keyLabel:'مفتاح Google Maps API', keySave:'حفظ المفتاح',
-      keyHint:'يُحفظ في هذا المتصفح فقط، وليس في كود الموقع. يجب تفعيل «Places API (New)». في Google Cloud اقصر المفتاح على digitaldotdeveloper.github.io.',
-      keyOn:'المفتاح محفوظ في هذا المتصفح.', keyOff:'لا يوجد مفتاح. أضفه للبحث في خرائط Google.', keySaved:'تم حفظ المفتاح', keyCleared:'تم حذف المفتاح',
-      needKey:'أضف مفتاح Google Maps API أولًا من الإعدادات بالأسفل.',
-      e403:'رفض Google المفتاح. تأكد من تفعيل Places API (New) وأن المفتاح يسمح بهذا الموقع.',
-      e400:'رفض Google الطلب: {m}', e429:'تم الوصول لحد الاستخدام في Google. انتظر دقيقة ثم ابحث مرة أخرى.',
-      eNet:'تعذر الاتصال بـ Google. تحقق من الإنترنت وحاول مرة أخرى.', eOther:'أرجع Google خطأ: {m}',
-      listH:'قائمة التواصل', count:'{n} مكتب · {p} برقم', all:'الكل',
-      sNew:'لم نتواصل', sNoanswer:'لم يرد', sCalled:'تم الاتصال', sInterested:'مهتم', sDeclined:'غير مهتم',
-      searchPh:'بحث بالاسم أو الحي أو الرقم',
-      sortBest:'الأنسب', sortDist:'الأقرب', sortRating:'الأعلى تقييمًا', sortStatus:'حسب الحالة', sortRecent:'آخر تحديث',
-      export:'تصدير CSV', exported:'تم تنزيل الملف',
-      emptyH:'لا توجد مكاتب بعد', emptyP:'اضغط «ابحث في خرائط Google» بالأعلى لجلب مكاتب العقار حول الفرع الجديد.',
-      noResults:'لا توجد مكاتب تطابق البحث أو التصفية.',
-      km:'كم', mobile:'جوال · غالبًا واتساب', landline:'هاتف أرضي', copy:'نسخ', copied:'تم نسخ الرقم', selected:'الرقم محدد، انسخه يدويًا.',
-      call:'اتصال', wa:'واتساب', map:'الخريطة ↗', web:'الموقع ↗', notesPh:'ملاحظات المكالمة', noPhone:'لا يوجد رقم في خرائط Google. افتح الخريطة للتأكد.',
-      topPick:'★ تواصل أولًا · #{n}',
-      reviews:'{n} تقييم', fit:'مستودعات / تجاري', manual:'أضيف يدويًا', updated:'آخر تحديث {d}',
-      del:'حذف', delQ:'حذف هذا المكتب؟', cancel:'إلغاء', deleted:'تم الحذف',
-      statusSaved:'تم تحديث الحالة', noteSaved:'تم حفظ الملاحظة',
-      addSummary:'إضافة مكتب يدويًا', fName:'اسم المكتب', fPhone:'رقم الجوال أو الهاتف', fArea:'الحي', fMap:'رابط خرائط Google أو الإحداثيات',
-      mapHint:'لحساب المسافة الصق رابط خرائط Google الكامل أو الإحداثيات. الروابط المختصرة maps.app.goo.gl تُحفظ بدون مسافة.',
-      fNotes:'ملاحظات', saveOffice:'حفظ المكتب', added:'تمت إضافة المكتب',
-      eName:'اكتب اسم المكتب.', ePhone:'الرقم غير مكتمل. اكتبه مثل 0551234567 أو 0138123456.', eDup:'هذا الرقم موجود في القائمة بالفعل.',
-      storageNote:'القائمة محفوظة في هذا المتصفح على هذا الجهاز. استخدم «تصدير CSV» لمشاركتها مع الفريق.',
-      eStore:'المتصفح منع الحفظ. أوقف وضع التصفح الخاص وحاول مرة أخرى.'
+      appName:'EasyPak Scraper', user:'اسم المستخدم', pass:'كلمة المرور', loginErr:'اسم المستخدم أو كلمة المرور غير صحيحة.', signIn:'دخول', signOut:'خروج', langBtn:'English',
+      h1:'وسطاء قرب الفرع الجديد',
+      statOffices:'مكتب', statContacted:'تم التواصل', statInterested:'مهتم',
+      tAll:'الكل', tTodo:'للتواصل', tNoanswer:'لم يرد', tInterested:'مهتم', tDeclined:'غير مهتم',
+      top:'الأفضل {n}', km:'كم', fal:'✓ فال {n}', commercial:'تجاري / مستودعات',
+      call:'اتصال', wa:'واتساب', map:'الخريطة',
+      called:'اتصال {n}×', messaged:'واتساب {n}×', last:'آخر تواصل {d}',
+      rNoanswer:'لم يرد', rInterested:'مهتم', rDeclined:'غير مهتم',
+      note:'ملاحظة', noteEdit:'ملاحظة ✓', notePh:'ماذا قال؟',
+      empty:'لا توجد مكاتب هنا. جرّب مسافة أوسع أو تبويبًا آخر.', loading:'جارٍ التحميل…', loadErr:'تعذر تحميل القائمة. أعد تحميل الصفحة.',
+      history:'السجل', historyEmpty:'ستظهر هنا المكالمات ورسائل الواتساب.',
+      aCall:'اتصال', aWa:'واتساب', aNoanswer:'لم يرد', aInterested:'مهتم', aDeclined:'غير مهتم', aCleared:'إلغاء النتيجة', aNote:'ملاحظة', aAdded:'إضافة',
+      addSummary:'إضافة مكتب', fName:'اسم المكتب', fPhone:'رقم الجوال أو الهاتف', saveOffice:'حفظ', added:'تمت الإضافة',
+      eName:'اكتب اسم المكتب.', ePhone:'اكتب الرقم مثل 0551234567.', eDup:'هذا الرقم موجود بالفعل.',
+      export:'تصدير CSV', exported:'تم تنزيل الملف', saved:'تم الحفظ', eStore:'المتصفح منع الحفظ. أوقف التصفح الخاص.'
     }
   };
-  var STATUSES = [
-    {id:'new', k:'sNew', c:'--s-new'}, {id:'noanswer', k:'sNoanswer', c:'--s-noanswer'},
-    {id:'called', k:'sCalled', c:'--s-called'}, {id:'interested', k:'sInterested', c:'--s-interested'},
-    {id:'declined', k:'sDeclined', c:'--s-declined'}
+  var RESULTS = [
+    {id:'noanswer', k:'rNoanswer', c:'var(--s-noanswer)'},
+    {id:'interested', k:'rInterested', c:'var(--s-interested)'},
+    {id:'declined', k:'rDeclined', c:'var(--s-declined)'}
   ];
-  var STATUS_ORDER = {interested:0, called:1, noanswer:2, 'new':3, declined:4};
+  var TABS = [
+    {id:'all', k:'tAll'}, {id:'todo', k:'tTodo'}, {id:'noanswer', k:'tNoanswer'},
+    {id:'interested', k:'tInterested'}, {id:'declined', k:'tDeclined'}
+  ];
 
   var $ = function(id){ return document.getElementById(id); };
-  function ls(k, v){ try{ if(v === undefined) return localStorage.getItem(k); if(v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); return true; }catch(e){ return v === undefined ? null : false; } }
+  function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  function lsSet(k, v){ try{ if(v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); return true; }catch(e){ return false; } }
+  function readJSON(k, d){ try{ return JSON.parse(lsGet(k) || '') || d; }catch(e){ return d; } }
 
-  var lang = ls(K_LANG) === 'ar' ? 'ar' : 'en';
-  var filter = 'all', pendingDelete = null, searching = false;
-  var offices = {};
-  try{ offices = JSON.parse(ls(K_DATA) || '{}') || {}; }catch(e){ offices = {}; }
+  var lang = lsGet(K_LANG) === 'ar' ? 'ar' : 'en';
+  var tab = 'all', openNote = null, loadState = 'loading';
+  var places = [];                              // offices from data.json
+  var state = readJSON(K_DATA, {});             // per office: result, calls, was, lastAt, note
+  var manual = readJSON(K_DATA + '-manual', []);
+  var log = readJSON(K_LOG, []);
 
-  function t(k, vars){
-    var s = (T[lang][k] != null ? T[lang][k] : T.en[k]) || k;
-    if(vars) Object.keys(vars).forEach(function(v){ s = s.split('{' + v + '}').join(vars[v]); });
+  function t(k, v){
+    var s = T[lang][k] != null ? T[lang][k] : (T.en[k] || k);
+    if(v) for(var x in v) s = s.split('{' + x + '}').join(v[x]);
     return s;
   }
-
-  /* ---------- language ---------- */
-  function applyLang(){
-    var root = document.documentElement;
-    root.lang = lang; root.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.title = t('appName');
-    document.querySelectorAll('[data-i18n]').forEach(function(n){ n.textContent = t(n.getAttribute('data-i18n')); });
-    document.querySelectorAll('[data-i18n-ph]').forEach(function(n){ n.placeholder = t(n.getAttribute('data-i18n-ph')); });
-    document.querySelectorAll('[data-lang-toggle]').forEach(function(b){ b.textContent = t('langBtn'); b.lang = lang === 'en' ? 'ar' : 'en'; });
-    $('filters').setAttribute('aria-label', t('listH'));
-    renderKeyState(); renderFilters(); renderList();
+  function save(){
+    var ok = lsSet(K_DATA, JSON.stringify(state)) && lsSet(K_LOG, JSON.stringify(log.slice(0, 2000))) && lsSet(K_DATA + '-manual', JSON.stringify(manual));
+    if(!ok) toast(t('eStore'));
+    return ok;
   }
-  document.querySelectorAll('[data-lang-toggle]').forEach(function(b){
-    b.addEventListener('click', function(){ lang = lang === 'en' ? 'ar' : 'en'; ls(K_LANG, lang); applyLang(); });
-  });
-
-  /* ---------- login ---------- */
-  function showApp(){ $('loginView').hidden = true; $('appView').hidden = false; }
-  $('loginForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    if($('lu').value.trim().toLowerCase() === USER && $('lp').value === PASS){ try{ sessionStorage.setItem(K_AUTH, '1'); }catch(x){} $('loginErr').hidden = true; showApp(); }
-    else { $('loginErr').hidden = false; $('lp').value = ''; $('lp').focus(); }
-  });
-  $('logout').addEventListener('click', function(){ try{ sessionStorage.removeItem(K_AUTH); }catch(x){} $('appView').hidden = true; $('loginView').hidden = false; $('lp').value = ''; });
 
   /* ---------- helpers ---------- */
   function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
-  function toLatin(s){ return String(s || '').replace(/[٠-٩]/g, function(d){ return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); }).replace(/[۰-۹]/g, function(d){ return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); }); }
+  function toLatin(s){ return String(s || '').replace(/[٠-٩]/g, function(d){ return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); }); }
   function normPhone(p){
     var d = toLatin(p).replace(/[^\d]/g, '');
     if(!d) return '';
@@ -427,329 +303,241 @@ details.add[open] summary::after{content:"−"}
     if(d.length === 9) return '966' + d;
     return d;
   }
-  function isMobile(n){ return /^9665\d{8}$/.test(n); }
-  function localPhone(n){
-    if(/^966[15]\d{8}$/.test(n)) return '0' + n.slice(3);
-    if(/^966(9200|800)/.test(n)) return n.slice(3);
-    return n ? '+' + n : '';
-  }
-  function prettyPhone(n){
-    var l = localPhone(n);
-    if(/^0\d{9}$/.test(l)) return l.slice(0,3) + ' ' + l.slice(3,6) + ' ' + l.slice(6);
-    return l;
-  }
-  function parseCoords(s){
-    s = toLatin(s);
-    var m = s.match(/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/) || s.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/) || s.match(/[?&](?:q|ll|query)=(-?\d+\.\d+),\s*(-?\d+\.\d+)/) || s.match(/^\s*(-?\d{1,2}\.\d+)\s*[, ،]\s*(-?\d{1,3}\.\d+)\s*$/);
-    if(!m) return null;
-    var lat = +m[1], lng = +m[2];
-    if(Math.abs(lat) > 90 || Math.abs(lng) > 180) return null;
-    return {lat:lat, lng:lng};
-  }
+  function isMobile(n){ return /^9665\d{8}$/.test(n || ''); }
+  function localPhone(n){ if(/^966[1-8]\d{8}$/.test(n)) return '0' + n.slice(3); if(/^966(9200|800)/.test(n)) return n.slice(3); return n ? '+' + n : ''; }
   function km(a, b){
     var R = 6371, r = Math.PI/180, dLat = (b.lat-a.lat)*r, dLng = (b.lng-a.lng)*r;
     var h = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dLng/2)*Math.sin(dLng/2);
     return 2*R*Math.asin(Math.sqrt(h));
   }
-  function distOf(o){ return (typeof o.lat === 'number' && typeof o.lng === 'number') ? km(BRANCH, o) : null; }
-  function isFit(o){ return FIT_RE.test((o.name || '') + ' ' + (o.address || '')); }
+  function when(ts){
+    var d = new Date(ts), now = new Date();
+    var loc = lang === 'ar' ? 'ar-SA-u-ca-gregory-nu-latn' : 'en-GB';
+    var time = d.toLocaleTimeString(loc, {hour:'2-digit', minute:'2-digit'});
+    if(d.toDateString() === now.toDateString()) return time;
+    return d.toLocaleDateString(loc, {day:'numeric', month:'short'}) + ' ' + time;
+  }
+  function st(id){ return state[id] || (state[id] = {calls:0, was:0}); }
+  // Google hides review counts from signed-out visitors, so rank on rating, warehouse/commercial focus, distance and a WhatsApp-able number.
   function score(o){
-    var d = distOf(o), s = 0;
-    if(o.rating) s += o.rating * Math.log10((o.reviews || 0) + 1) * 2;
-    if(isFit(o)) s += 6;
-    if(o.phone) s += 3;
-    if(d != null) s -= d * 0.6;
-    return s;
+    if(o.rank && o.rank < 99) return 1000 - o.rank;
+    var s = 0;
+    if(o.rating) s += (o.rating - 3.5) * 2;
+    if(FIT_RE.test(o.name + ' ' + (o.category || ''))) s += 6;
+    if(/real estate/i.test(o.category || '')) s += 1.5;
+    if(isMobile(o.phone)) s += 2;
+    return s - (o.d || 0) * 0.6;
   }
-  function statusOf(id){ for(var i=0;i<STATUSES.length;i++) if(STATUSES[i].id === id) return STATUSES[i]; return STATUSES[0]; }
-  function persist(){ if(!ls(K_DATA, JSON.stringify(offices))){ toast(t('eStore')); return false; } return true; }
   var toastTimer;
-  function toast(msg){ $('toastText').textContent = msg; $('toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function(){ $('toast').hidden = true; }, 2400); }
-  function selectText(node){ try{ var r = document.createRange(); r.selectNodeContents(node); var s = getSelection(); s.removeAllRanges(); s.addRange(r); toast(t('selected')); }catch(e){} }
-  function copy(text, node){
-    try{ navigator.clipboard.writeText(text).then(function(){ toast(t('copied')); }, function(){ selectText(node); }); }catch(e){ selectText(node); }
-  }
-  window.addEventListener('storage', function(e){
-    if(e.key === K_DATA){ try{ offices = JSON.parse(e.newValue || '{}') || {}; }catch(x){} renderFilters(); renderList(); }
-  });
+  function toast(msg){ $('toastText').textContent = msg; $('toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function(){ $('toast').hidden = true; }, 2000); }
 
-  /* ---------- Google Places search ---------- */
-  function renderTerms(){
-    var box = $('terms'); box.innerHTML = '';
-    TERMS.forEach(function(term, i){
-      var l = el('label','term'); l.lang = /[a-z]/i.test(term.q) ? 'en' : 'ar';
-      var cb = document.createElement('input'); cb.type = 'checkbox'; cb.id = 'term' + i; cb.checked = term.on;
-      cb.addEventListener('change', function(){ term.on = cb.checked; });
-      l.appendChild(cb); l.appendChild(document.createTextNode(term.q));
-      box.appendChild(l);
-    });
+  function record(o, action, extra){
+    var s = st(o.id);
+    if(action === 'call'){ s.calls = (s.calls || 0) + 1; s.lastAt = Date.now(); }
+    if(action === 'wa'){ s.was = (s.was || 0) + 1; s.lastAt = Date.now(); }
+    log.unshift({t:Date.now(), id:o.id, name:o.name, a:action, x:extra || ''});
+    save();
   }
-  function renderKeyState(){
-    var has = !!ls(K_KEY);
-    $('keyState').textContent = has ? t('keyOn') : t('keyOff');
-    $('keyState').className = 'key-state ' + (has ? 'ok' : 'muted');
-  }
-  $('saveKey').addEventListener('click', function(){
-    var v = $('apiKey').value.trim();
-    if(v){ ls(K_KEY, v); $('apiKey').value = ''; toast(t('keySaved')); }
-    else { ls(K_KEY, null); toast(t('keyCleared')); }
-    renderKeyState();
-  });
 
-  function placesPage(key, body){
-    return fetch('https://places.googleapis.com/v1/places:searchText', {
-      method:'POST',
-      headers:{'Content-Type':'application/json', 'X-Goog-Api-Key':key, 'X-Goog-FieldMask':FIELDS},
-      body:JSON.stringify(body)
-    }).then(function(r){
-      return r.json().catch(function(){ return {}; }).then(function(j){
-        if(!r.ok){ var err = new Error((j.error && j.error.message) || ('HTTP ' + r.status)); err.status = r.status; throw err; }
-        return j;
+  /* ---------- data ---------- */
+  function offices(){ return places.concat(manual).filter(function(o){ return o.phone; }); }
+  function inRange(){ return true; }
+  function inTab(o, which){
+    var s = state[o.id] || {};
+    if(which === 'all') return true;
+    if(which === 'todo') return !s.calls && !s.was && !s.result;
+    return s.result === which;
+  }
+
+  function loadData(){
+    fetch('data.json?t=' + Date.now(), {cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
+      places = (j.places || []).map(function(p){
+        var o = {id:'g_' + String(p.id).replace(/[^\w:.-]/g, ''), name:p.name, phone:normPhone(p.phone), rating:p.rating,
+          lat:p.lat, lng:p.lng, mapUrl:p.mapUrl, category:p.category || '', fal:p.fal || null, commercial:!!p.commercial,
+          why:p.why || null, links:p.links || {}, rank:p.rank || 99};
+        o.d = (typeof o.lat === 'number') ? km(BRANCH, o) : null;
+        return o;
       });
-    }, function(){ var err = new Error('network'); err.status = 0; throw err; });
-  }
-  function wait(ms){ return new Promise(function(res){ setTimeout(res, ms); }); }
-
-  function mergePlace(p, term, found){
-    if(p.businessStatus === 'CLOSED_PERMANENTLY' || !p.location) return;
-    var id = 'g_' + p.id;
-    var rec = {
-      name:(p.displayName && p.displayName.text) || '',
-      phone:normPhone(p.internationalPhoneNumber || p.nationalPhoneNumber || ''),
-      address:p.shortFormattedAddress || p.formattedAddress || '',
-      lat:p.location.latitude, lng:p.location.longitude,
-      rating:p.rating || null, reviews:p.userRatingCount || 0,
-      mapUrl:p.googleMapsUri || '', website:p.websiteUri || '',
-      source:'google'
-    };
-    var prev = offices[id];
-    if(!prev){ found.added++; rec.status = 'new'; rec.notes = ''; rec.createdAt = Date.now(); rec.terms = [term]; offices[id] = rec; }
-    else {
-      var terms = prev.terms || []; if(terms.indexOf(term) === -1) terms.push(term);
-      offices[id] = Object.assign({}, prev, rec, {status:prev.status, notes:prev.notes, terms:terms});
-    }
-    found.ids[id] = true;
+      loadState = 'ok';
+    }).catch(function(){ loadState = 'err'; }).then(render);
   }
 
-  $('findBtn').addEventListener('click', function(){
-    if(searching) return;
-    var key = ls(K_KEY);
-    var st = $('findStatus'); st.className = 'note';
-    if(!key){ st.textContent = t('needKey'); st.className = 'err'; $('settings').open = true; $('apiKey').focus(); return; }
-    var terms = TERMS.filter(function(x){ return x.on; }).map(function(x){ return x.q; });
-    if(!terms.length) return;
-    var radius = +$('radius').value, rKm = radius / 1000;
-    var found = {added:0, ids:{}};
-    var steps = terms.length * 3, done = 0;
-    searching = true; $('findBtn').disabled = true; $('progress').hidden = false; $('progressBar').style.width = '4%';
-
-    var chain = Promise.resolve();
-    terms.forEach(function(term){
-      chain = chain.then(function(){
-        var page = 0, token = null;
-        function next(){
-          st.textContent = t('searching', {q:term, n:Object.keys(found.ids).length});
-          var body = {textQuery:term, languageCode:lang, regionCode:'SA', pageSize:20,
-            locationBias:{circle:{center:{latitude:BRANCH.lat, longitude:BRANCH.lng}, radius:Math.min(radius * 1.5, 50000)}}};
-          if(token) body.pageToken = token;
-          return placesPage(key, body).then(function(j){
-            (j.places || []).forEach(function(p){
-              var d = p.location ? km(BRANCH, {lat:p.location.latitude, lng:p.location.longitude}) : 99;
-              if(d <= rKm) mergePlace(p, term, found);
-            });
-            page++; done++;
-            $('progressBar').style.width = Math.min(96, Math.round(done / steps * 100)) + '%';
-            token = j.nextPageToken;
-            if(token && page < 3) return wait(400).then(next);
-            done += 3 - page;
-          });
-        }
-        return next();
-      });
+  /* ---------- render ---------- */
+  function render(){
+    var inR = offices().filter(inRange);
+    var contacted = 0, interested = 0;
+    inR.forEach(function(o){ var s = state[o.id] || {}; if(s.calls || s.was) contacted++; if(s.result === 'interested') interested++; });
+    var stats = $('stats'); stats.innerHTML = '';
+    [[inR.length, 'statOffices'], [contacted, 'statContacted'], [interested, 'statInterested']].forEach(function(x){
+      var sp = el('span'); sp.appendChild(el('b', null, String(x[0]))); sp.appendChild(document.createTextNode(' ' + t(x[1]))); stats.appendChild(sp);
     });
 
-    chain.then(function(){
-      persist();
-      var n = Object.keys(found.ids).length;
-      st.textContent = n ? t('found', {n:n, r:rKm, 'new':found.added}) : t('foundNone', {r:rKm});
-      st.className = n ? 'ok' : 'note';
-      $('sort').value = 'best';
-    }, function(err){
-      persist();
-      var m = err.message;
-      st.textContent = err.status === 0 ? t('eNet') : err.status === 403 ? t('e403') : err.status === 429 ? t('e429') : err.status === 400 ? t('e400', {m:m}) : t('eOther', {m:m});
-      st.className = 'err';
-    }).then(function(){
-      searching = false; $('findBtn').disabled = false;
-      $('progressBar').style.width = '100%';
-      setTimeout(function(){ $('progress').hidden = true; $('progressBar').style.width = '0'; }, 600);
-      renderFilters(); renderList();
+    var tabs = $('tabs'); tabs.innerHTML = '';
+    TABS.forEach(function(x){
+      var n = inR.filter(function(o){ return inTab(o, x.id); }).length;
+      var b = el('button', 'tab', t(x.k)); b.type = 'button';
+      b.setAttribute('aria-pressed', tab === x.id ? 'true' : 'false');
+      b.appendChild(el('span', 'n', String(n)));
+      b.addEventListener('click', function(){ tab = x.id; render(); });
+      tabs.appendChild(b);
     });
-  });
 
-  /* ---------- filters + list ---------- */
-  function all(){ return Object.keys(offices).map(function(id){ return Object.assign({id:id}, offices[id]); }); }
-  function renderFilters(){
-    var rows = all(), counts = {all:rows.length};
-    STATUSES.forEach(function(s){ counts[s.id] = 0; });
-    rows.forEach(function(o){ counts[o.status || 'new']++; });
-    var box = $('filters'); box.innerHTML = '';
-    [{id:'all', k:'all'}].concat(STATUSES).forEach(function(s){
-      var b = el('button','chip'); b.type = 'button';
-      b.setAttribute('aria-pressed', filter === s.id ? 'true' : 'false');
-      if(s.c){ var d = el('span','dot'); d.style.setProperty('--c', 'var(' + s.c + ')'); b.appendChild(d); }
-      b.appendChild(document.createTextNode(t(s.k) + ' '));
-      b.appendChild(el('span','n', String(counts[s.id])));
-      b.addEventListener('click', function(){ filter = s.id; renderFilters(); renderList(); });
-      box.appendChild(b);
-    });
-    var withPhone = rows.filter(function(o){ return o.phone; }).length;
-    $('countLine').textContent = rows.length ? t('count', {n:rows.length, p:withPhone}) : '';
-    $('exportBtn').disabled = !rows.length;
-  }
-
-  function renderList(){
-    var box = $('list'); box.innerHTML = '';
-    var rows = all();
-    if(!rows.length){
-      var e = el('div','empty');
-      e.appendChild(el('strong', null, t('emptyH')));
-      e.appendChild(el('p', null, t('emptyP')));
-      box.appendChild(e); return;
-    }
-    var q = toLatin($('search').value.trim().toLowerCase());
-    rows = rows.filter(function(o){
-      if(filter !== 'all' && (o.status || 'new') !== filter) return false;
-      return !q || [o.name, o.address, o.area, o.phone, localPhone(o.phone), o.notes].join(' ').toLowerCase().indexOf(q) !== -1;
-    });
-    var sort = $('sort').value;
-    rows.sort(function(a, b){
-      if(sort === 'status'){ var s = STATUS_ORDER[a.status||'new'] - STATUS_ORDER[b.status||'new']; if(s) return s; return score(b) - score(a); }
-      if(sort === 'recent') return (b.updatedAt || b.createdAt || 0) - (a.updatedAt || a.createdAt || 0);
-      if(sort === 'rating') return ((b.rating||0) - (a.rating||0)) || ((b.reviews||0) - (a.reviews||0));
-      if(sort === 'dist'){ var da = distOf(a), dbb = distOf(b); return (da == null ? 1e9 : da) - (dbb == null ? 1e9 : dbb); }
-      return score(b) - score(a);
-    });
-    if(!rows.length){ box.appendChild(el('p','note', t('noResults'))); return; }
-    var top = {};
-    all().filter(function(o){ return o.phone && o.status !== 'declined'; }).sort(function(a, b){ return score(b) - score(a); }).slice(0, 5).forEach(function(o, i){ top[o.id] = i + 1; });
-    rows.forEach(function(o){ box.appendChild(card(o, top[o.id])); });
-  }
-
-  function update(id, patch, msg){
-    offices[id] = Object.assign({}, offices[id], patch, {updatedAt:Date.now()});
-    if(persist()) toast(msg);
+    var list = $('list'); list.innerHTML = '';
+    if(loadState !== 'ok' && !manual.length){ list.appendChild(el('div', 'empty', t(loadState === 'err' ? 'loadErr' : 'loading'))); renderLog(); return; }
+    var ranked = inR.slice().sort(function(a, b){ return score(b) - score(a); });
+    var topRank = {};
+    ranked.filter(function(o){ return (state[o.id] || {}).result !== 'declined'; }).slice(0, 5).forEach(function(o, i){ topRank[o.id] = i + 1; });
+    var rows = ranked.filter(function(o){ return inTab(o, tab); });
+    if(!rows.length) list.appendChild(el('div', 'empty', t('empty')));
+    rows.forEach(function(o){ list.appendChild(card(o, topRank[o.id])); });
+    renderLog();
   }
 
   function card(o, rank){
-    var st = statusOf(o.status), d = distOf(o);
-    var c = el('article','office' + (rank ? ' top' : '')); c.style.setProperty('--c', 'var(' + st.c + ')');
+    var s = state[o.id] || {};
+    var c = el('article', 'card' + (rank ? ' top1' : ''));
 
-    var head = el('div','o-head');
+    var head = el('div', 'c-head');
     var left = el('div'); left.style.minWidth = '0';
-    if(rank) left.appendChild(el('span','pick', t('topPick', {n:rank})));
-    left.appendChild(el('h3','o-name', o.name));
-    var meta = el('div','o-meta');
-    if(o.rating){ var stars = el('span','stars', '★ ' + o.rating.toFixed(1)); meta.appendChild(stars); meta.appendChild(el('span', null, t('reviews', {n:o.reviews || 0}))); }
-    if(o.address || o.area) meta.appendChild(el('span', null, o.address || o.area));
-    if(o.source === 'manual') meta.appendChild(el('span', null, t('manual')));
-    if(o.updatedAt) meta.appendChild(el('span', null, t('updated', {d:new Date(o.updatedAt).toLocaleDateString(lang === 'ar' ? 'ar-SA-u-ca-gregory' : 'en-GB', {day:'numeric', month:'short'})})));
-    left.appendChild(meta);
+    if(rank) left.appendChild(el('span', 'pick', '★ ' + t('top', {n:rank})));
+    left.appendChild(el('h3', 'c-name', o.name));
+    var sub = el('div', 'c-sub');
+    if(o.rating) sub.appendChild(el('span', 'star', '★ ' + o.rating.toFixed(1)));
+    sub.appendChild(el('span', 'num', localPhone(o.phone)));
+    if(s.calls) sub.appendChild(el('span', 'done', t('called', {n:s.calls})));
+    if(s.was) sub.appendChild(el('span', 'done', t('messaged', {n:s.was})));
+    if(s.lastAt) sub.appendChild(el('span', null, t('last', {d:when(s.lastAt)})));
+    left.appendChild(sub);
+    if(o.why) left.appendChild(el('p', 'why', o.why[lang] || o.why.en));
+    if(o.fal || o.commercial){
+      var bd = el('div', 'badges');
+      if(o.fal) bd.appendChild(el('span', 'badge fal num', t('fal', {n:o.fal})));
+      if(o.commercial) bd.appendChild(el('span', 'badge', t('commercial')));
+      left.appendChild(bd);
+    }
     head.appendChild(left);
-    head.appendChild(el('span','dist', d == null ? '—' : (d < 10 ? d.toFixed(1) : Math.round(d)) + ' ' + t('km')));
+    if(o.d != null) head.appendChild(el('span', 'dist', (o.d < 10 ? o.d.toFixed(1) : Math.round(o.d)) + ' ' + t('km')));
     c.appendChild(head);
 
-    if(o.phone){
-      var ph = el('div','phone');
-      var num = el('span','num', prettyPhone(o.phone));
-      ph.appendChild(num);
-      ph.appendChild(el('span','tag', isMobile(o.phone) ? t('mobile') : t('landline')));
-      if(isFit(o)) ph.appendChild(el('span','tag fit', t('fit')));
-      var cp = el('button','btn btn-ghost btn-sm', t('copy')); cp.type = 'button';
-      cp.addEventListener('click', function(){ copy(localPhone(o.phone), num); });
-      ph.appendChild(cp);
-      c.appendChild(ph);
-    } else {
-      if(isFit(o)){ var ft = el('div','phone'); ft.appendChild(el('span','tag fit', t('fit'))); c.appendChild(ft); }
-      c.appendChild(el('p','note', t('noPhone')));
+    var go = el('div', 'go');
+    var call = el('a', 'btn call'); call.href = 'tel:+' + o.phone;
+    call.innerHTML = ICON_CALL; call.appendChild(document.createTextNode(t('call')));
+    if(s.calls) call.appendChild(el('span', 'cnt', String(s.calls)));
+    call.addEventListener('click', function(){ record(o, 'call'); setTimeout(render, 300); });
+    var wa = el('a', 'btn wa'); wa.href = 'https://wa.me/' + o.phone; wa.target = '_blank'; wa.rel = 'noopener';
+    wa.innerHTML = ICON_WA; wa.appendChild(document.createTextNode(t('wa')));
+    if(s.was) wa.appendChild(el('span', 'cnt', String(s.was)));
+    if(!isMobile(o.phone)) wa.setAttribute('aria-disabled', 'true');
+    wa.addEventListener('click', function(){ record(o, 'wa'); setTimeout(render, 300); });
+    var map = el('a', 'btn map'); map.target = '_blank'; map.rel = 'noopener'; map.setAttribute('aria-label', t('map'));
+    map.href = o.mapUrl || ('https://www.google.com/maps/search/' + encodeURIComponent(o.name + ' الدمام'));
+    map.innerHTML = ICON_MAP;
+    go.appendChild(call); go.appendChild(wa); go.appendChild(map);
+    c.appendChild(go);
+
+    var lk = o.links || {}, names = [['website', 'Website'], ['instagram', 'Instagram'], ['x', 'X'], ['snapchat', 'Snapchat'], ['tiktok', 'TikTok'], ['facebook', 'Facebook']];
+    var lrow = el('div', 'links');
+    names.forEach(function(n){ if(lk[n[0]] && /^https?:\/\//.test(lk[n[0]])){ var a = el('a', null, n[1] + ' ↗'); a.href = lk[n[0]]; a.target = '_blank'; a.rel = 'noopener'; lrow.appendChild(a); } });
+    if(lrow.childNodes.length) c.appendChild(lrow);
+
+    var res = el('div', 'result');
+    RESULTS.forEach(function(r){
+      var b = el('button', 'res', t(r.k)); b.type = 'button';
+      b.style.setProperty('--c', r.c);
+      b.setAttribute('aria-pressed', s.result === r.id ? 'true' : 'false');
+      b.addEventListener('click', function(){
+        var cur = st(o.id);
+        if(cur.result === r.id){ delete cur.result; record(o, 'cleared'); }
+        else { cur.result = r.id; record(o, r.id); }
+        toast(t('saved')); render();
+      });
+      res.appendChild(b);
+    });
+    var nb = el('button', 'note-btn' + (s.note ? ' has' : ''), s.note ? t('noteEdit') : t('note')); nb.type = 'button';
+    nb.addEventListener('click', function(){ openNote = openNote === o.id ? null : o.id; render(); });
+    res.appendChild(nb);
+    c.appendChild(res);
+
+    if(openNote === o.id){
+      var ta = el('textarea', 'note'); ta.value = s.note || ''; ta.placeholder = t('notePh'); ta.id = 'note-' + o.id;
+      ta.addEventListener('change', function(){
+        var cur = st(o.id);
+        if(ta.value.trim() === (cur.note || '')) return;
+        cur.note = ta.value.trim(); record(o, 'note', cur.note); toast(t('saved'));
+      });
+      c.appendChild(ta);
+      setTimeout(function(){ ta.focus(); }, 0);
     }
-
-    var act = el('div','actions');
-    var call = el('a','btn', t('call')); call.href = 'tel:+' + o.phone; if(!o.phone) call.setAttribute('aria-disabled','true');
-    var wa = el('a','btn btn-wa', t('wa')); wa.href = 'https://wa.me/' + o.phone; wa.target = '_blank'; wa.rel = 'noopener';
-    if(!isMobile(o.phone || '')) wa.setAttribute('aria-disabled','true');
-    var map = el('a','btn', t('map')); map.target = '_blank'; map.rel = 'noopener';
-    map.href = /^https?:\/\//.test(o.mapUrl || '') ? o.mapUrl : (o.lat != null ? 'https://www.google.com/maps/search/?api=1&query=' + o.lat + ',' + o.lng : 'https://www.google.com/maps/search/' + encodeURIComponent(o.name + ' Dammam'));
-    act.appendChild(call); act.appendChild(wa); act.appendChild(map);
-    if(o.website && /^https?:\/\//.test(o.website)){ var w = el('a','btn', t('web')); w.href = o.website; w.target = '_blank'; w.rel = 'noopener'; act.appendChild(w); }
-    c.appendChild(act);
-
-    var foot = el('div','o-foot');
-    var sel = el('select'); sel.setAttribute('aria-label', t('listH'));
-    STATUSES.forEach(function(s){ var op = el('option', null, t(s.k)); op.value = s.id; if(s.id === (o.status || 'new')) op.selected = true; sel.appendChild(op); });
-    sel.addEventListener('change', function(){ update(o.id, {status:sel.value}, t('statusSaved')); renderFilters(); renderList(); });
-    var notes = el('textarea','input'); notes.value = o.notes || ''; notes.placeholder = t('notesPh'); notes.rows = 1;
-    notes.addEventListener('change', function(){ update(o.id, {notes:notes.value}, t('noteSaved')); });
-    foot.appendChild(sel); foot.appendChild(notes);
-    c.appendChild(foot);
-
-    var del = el('div','del');
-    if(pendingDelete === o.id){
-      del.appendChild(el('span','muted', t('delQ')));
-      var yes = el('button','btn btn-sm', t('del')); yes.type = 'button'; yes.style.color = 'var(--s-declined)';
-      yes.addEventListener('click', function(){ pendingDelete = null; delete offices[o.id]; if(persist()) toast(t('deleted')); renderFilters(); renderList(); });
-      var no = el('button','btn btn-ghost btn-sm', t('cancel')); no.type = 'button';
-      no.addEventListener('click', function(){ pendingDelete = null; renderList(); });
-      del.appendChild(yes); del.appendChild(no);
-    } else {
-      var db = el('button','btn btn-ghost btn-sm', t('del')); db.type = 'button';
-      db.addEventListener('click', function(){ pendingDelete = o.id; renderList(); });
-      del.appendChild(db);
-    }
-    c.appendChild(del);
     return c;
   }
 
-  /* ---------- manual add ---------- */
+  var ACTION_KEY = {call:'aCall', wa:'aWa', noanswer:'aNoanswer', interested:'aInterested', declined:'aDeclined', cleared:'aCleared', note:'aNote', added:'aAdded'};
+  function renderLog(){
+    var ul = $('log'); ul.innerHTML = '';
+    if(!log.length){ ul.appendChild(el('li', null, t('historyEmpty'))); return; }
+    log.slice(0, 100).forEach(function(e){
+      var li = el('li');
+      li.appendChild(el('time', null, when(e.t)));
+      var w = el('span', 'what');
+      w.appendChild(el('b', null, t(ACTION_KEY[e.a] || e.a)));
+      w.appendChild(document.createTextNode(' · ' + e.name + (e.x ? ' — ' + e.x : '')));
+      li.appendChild(w); ul.appendChild(li);
+    });
+  }
+
+  /* ---------- language + login ---------- */
+  function applyLang(){
+    document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function(n){ n.textContent = t(n.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-lang-toggle]').forEach(function(b){ b.textContent = t('langBtn'); b.lang = lang === 'en' ? 'ar' : 'en'; });
+    render();
+  }
+  document.querySelectorAll('[data-lang-toggle]').forEach(function(b){
+    b.addEventListener('click', function(){ lang = lang === 'en' ? 'ar' : 'en'; lsSet(K_LANG, lang); applyLang(); });
+  });
+  function showApp(){ $('loginView').hidden = true; $('appView').hidden = false; }
+  $('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if($('lu').value.trim().toLowerCase() === USER && $('lp').value === PASS){ lsSet(K_AUTH, '1'); $('loginErr').hidden = true; showApp(); }
+    else { $('loginErr').hidden = false; $('lp').value = ''; $('lp').focus(); }
+  });
+  $('logout').addEventListener('click', function(){ lsSet(K_AUTH, null); $('appView').hidden = true; $('loginView').hidden = false; $('lp').value = ''; });
+
+  /* ---------- add + export ---------- */
   $('addForm').addEventListener('submit', function(e){
     e.preventDefault();
     var err = $('addErr'); err.hidden = true;
-    var name = $('fName').value.trim();
+    var name = $('fName').value.trim(), phone = normPhone($('fPhone').value);
     if(!name){ err.textContent = t('eName'); err.hidden = false; return; }
-    var phone = normPhone($('fPhone').value);
-    if($('fPhone').value.trim() && phone.length < 11){ err.textContent = t('ePhone'); err.hidden = false; return; }
-    if(phone && all().some(function(o){ return o.phone === phone; })){ err.textContent = t('eDup'); err.hidden = false; return; }
-    var mapUrl = $('fMap').value.trim(), coords = parseCoords(mapUrl);
-    var rec = {name:name, phone:phone, area:$('fArea').value.trim(), mapUrl:/^https?:\/\//.test(mapUrl) ? mapUrl : '', notes:$('fNotes').value.trim(), status:'new', source:'manual', createdAt:Date.now()};
-    if(coords){ rec.lat = coords.lat; rec.lng = coords.lng; }
-    offices['m_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6)] = rec;
-    if(persist()){ $('addForm').reset(); toast(t('added')); }
-    renderFilters(); renderList();
+    if(phone.length < 11){ err.textContent = t('ePhone'); err.hidden = false; return; }
+    if(offices().some(function(o){ return o.phone === phone; })){ err.textContent = t('eDup'); err.hidden = false; return; }
+    var o = {id:'m_' + Date.now().toString(36), name:name, phone:phone, d:null};
+    manual.push(o); record(o, 'added');
+    $('addForm').reset(); toast(t('added')); render();
   });
-
-  /* ---------- export ---------- */
   $('exportBtn').addEventListener('click', function(){
-    var cols = ['Name','Phone','WhatsApp','Distance km','Rating','Reviews','Status','Notes','Address','Google Maps','Website'];
-    var lines = [cols];
-    all().sort(function(a, b){ return score(b) - score(a); }).forEach(function(o){
-      var d = distOf(o);
-      lines.push([o.name, localPhone(o.phone), isMobile(o.phone || '') ? 'https://wa.me/' + o.phone : '', d == null ? '' : d.toFixed(1), o.rating || '', o.reviews || '', T.en[statusOf(o.status).k], o.notes || '', o.address || o.area || '', o.mapUrl || '', o.website || '']);
+    var rows = [['Name','Phone','WhatsApp','Distance km','Rating','Calls','WhatsApp opened','Last contact','Result','Note','Google Maps']];
+    offices().sort(function(a, b){ return score(b) - score(a); }).forEach(function(o){
+      var s = state[o.id] || {};
+      rows.push([o.name, localPhone(o.phone), isMobile(o.phone) ? 'https://wa.me/' + o.phone : '', o.d == null ? '' : o.d.toFixed(1), o.rating || '',
+        s.calls || 0, s.was || 0, s.lastAt ? new Date(s.lastAt).toLocaleString('en-GB') : '', s.result || '', s.note || '', o.mapUrl || '']);
     });
-    var csv = '﻿' + lines.map(function(r){ return r.map(function(v){ v = String(v == null ? '' : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(','); }).join('\r\n');
+    var csv = '﻿' + rows.map(function(r){ return r.map(function(v){ v = String(v == null ? '' : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(','); }).join('\r\n');
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'}));
-    a.download = 'dammam-brokers-' + new Date().toISOString().slice(0, 10) + '.csv';
+    a.download = 'easypak-brokers-' + new Date().toISOString().slice(0, 10) + '.csv';
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
     toast(t('exported'));
   });
+  window.addEventListener('storage', function(e){
+    if(e.key === K_DATA || e.key === K_LOG){ state = readJSON(K_DATA, {}); log = readJSON(K_LOG, []); render(); }
+  });
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden) render(); });
 
-  $('search').addEventListener('input', renderList);
-  $('sort').addEventListener('change', renderList);
-
-  renderTerms();
   applyLang();
-  try{ if(sessionStorage.getItem(K_AUTH) === '1') showApp(); }catch(e){}
+  if(lsGet(K_AUTH) === '1') showApp();
+  loadData();
 })();
 </script>
 </body>
