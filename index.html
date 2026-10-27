@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>وسطاء مستودع الدمام</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@600;700&display=swap">
+<style>
+/* Layout: one narrow RTL column, phone first. Slate header band, lime only for primary actions. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#eaeef2;
+  --ink:#1b2530; --ink-2:#4a5c73; --ink-3:#7d8a9b; --line:#dde3ea;
+  --band:#2f3d4e; --band-ink:#ffffff; --band-ink-2:#c4d0de;
+  --lime:#b4da3c; --lime-ink:#1f2a08; --lime-text:#5f7d0e;
+  --wa:#1f9d55; --wa-ink:#ffffff;
+  --s-new:#7d8a9b; --s-noanswer:#c27c0e; --s-called:#2f6fb8; --s-interested:#1f9d55; --s-declined:#b8423a;
+  --focus:#2f6fb8;
+  --f-display:'Reem Kufi','IBM Plex Sans Arabic',system-ui,sans-serif;
+  --f-body:'IBM Plex Sans Arabic',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+  --r:14px; --r-sm:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#11171e; --surface:#19212b; --surface-2:#222c38;
+  --ink:#e8edf2; --ink-2:#a9b6c6; --ink-3:#7f8da0; --line:#2c3846;
+  --band:#0c1218; --band-ink:#f3f6f9; --band-ink-2:#9fb0c3;
+  --lime:#b4da3c; --lime-ink:#1f2a08; --lime-text:#bfe24f;
+  --wa:#25b463; --wa-ink:#06130b;
+  --s-new:#8e9bad; --s-noanswer:#e2a33a; --s-called:#5e9be0; --s-interested:#3fc77a; --s-declined:#e2716a;
+  --focus:#8fc0ff; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#11171e; --surface:#19212b; --surface-2:#222c38;
+  --ink:#e8edf2; --ink-2:#a9b6c6; --ink-3:#7f8da0; --line:#2c3846;
+  --band:#0c1218; --band-ink:#f3f6f9; --band-ink-2:#9fb0c3;
+  --lime:#b4da3c; --lime-ink:#1f2a08; --lime-text:#bfe24f;
+  --wa:#25b463; --wa-ink:#06130b;
+  --s-new:#8e9bad; --s-noanswer:#e2a33a; --s-called:#5e9be0; --s-interested:#3fc77a; --s-declined:#e2716a;
+  --focus:#8fc0ff; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3}
+h2{font-size:1.2rem}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.muted{color:var(--ink-3)}
+.num{direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
+
+/* Login */
+.login{min-height:100%;display:grid;place-items:center;padding-block:48px}
+.login-card{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px 22px;display:grid;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink-2);font-size:.85rem;letter-spacing:.02em}
+.brand i{width:28px;height:4px;background:var(--lime);border-radius:2px;display:block}
+.field{display:grid;gap:6px}
+.field label{font-size:.85rem;color:var(--ink-2);font-weight:500}
+.input{width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 12px;min-height:44px}
+textarea.input{min-height:72px;resize:vertical}
+.err{color:var(--s-declined);font-size:.9rem;margin:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:8px 14px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--surface);font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--surface-2)}
+.btn-primary{background:var(--lime);color:var(--lime-ink);border-color:transparent}
+.btn-primary:hover{background:var(--lime);filter:brightness(.95)}
+.btn-wa{background:var(--wa);color:var(--wa-ink);border-color:transparent}
+.btn-wa:hover{background:var(--wa);filter:brightness(.95)}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--ink-2)}
+.btn-sm{min-height:34px;padding:4px 10px;font-size:.85rem}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+
+/* Header band */
+.band{background:var(--band);color:var(--band-ink)}
+.band .wrap{padding-block:22px 20px;display:grid;gap:12px}
+.band-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.band .brand{color:var(--band-ink-2)}
+.band h1{font-size:1.6rem}
+.band p{margin:0;color:var(--band-ink-2);max-width:60ch}
+.branch{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:.9rem;color:var(--band-ink-2)}
+.branch b{color:var(--band-ink);font-weight:600}
+.branch a{color:var(--lime);font-weight:600}
+.band .btn-ghost{color:var(--band-ink-2)}
+
+main .wrap{padding-block:20px 48px;display:grid;gap:28px}
+section{display:grid;gap:12px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.hint{margin:0;color:var(--ink-2);font-size:.92rem;max-width:62ch}
+
+/* Google Maps searches */
+.queries{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.q{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);text-decoration:none;font-weight:600;min-width:0}
+.q:hover{border-color:var(--ink-3)}
+.q small{display:block;font-weight:400;color:var(--ink-3);font-size:.8rem}
+.q .arrow{color:var(--lime-text);flex:none}
+.q.top{border-color:var(--lime-text)}
+.radius{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:.88rem;color:var(--ink-2)}
+
+/* Status summary + filters */
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.85rem;cursor:pointer;min-height:34px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--c,var(--ink-3));flex:none}
+.chip .n{font-variant-numeric:tabular-nums;opacity:.75}
+
+/* Add form */
+details.add{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.add summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.add summary::-webkit-details-marker{display:none}
+details.add summary::after{content:"+";font-size:1.3rem;color:var(--lime-text)}
+details.add[open] summary::after{content:"−"}
+.add-form{display:grid;gap:12px;padding:0 16px 16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+
+/* Office list */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.toolbar .input{flex:1 1 200px;min-height:40px}
+.list{display:grid;gap:10px}
+.office{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;gap:10px;border-inline-start:4px solid var(--c,var(--s-new))}
+.o-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.o-name{font-weight:700;font-size:1.05rem;margin:0;min-width:0;overflow-wrap:anywhere}
+.o-meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.85rem;color:var(--ink-3)}
+.dist{font-weight:600;color:var(--ink-2);white-space:nowrap}
+.phone{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.phone .num{font-size:1.05rem;font-weight:600;user-select:all}
+.tag{font-size:.75rem;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--ink-2)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions .btn{flex:1 1 auto}
+.o-foot{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;align-items:start}
+.o-foot select{min-height:38px;padding:4px 8px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--surface-2)}
+.o-foot textarea{min-height:38px;padding:6px 10px}
+@media (max-width:520px){.o-foot{grid-template-columns:1fr}}
+.del{display:flex;gap:6px;align-items:center;justify-content:flex-end;font-size:.85rem}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:22px 18px;display:grid;gap:8px}
+.empty p{margin:0;color:var(--ink-2)}
+.note{font-size:.85rem;color:var(--ink-3);margin:0}
+.toast{position:fixed;inset-inline:0;bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;pointer-events:none;z-index:20}
+.toast span{background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:.9rem}
+@media (prefers-reduced-motion:no-preference){.office{transition:border-color .2s}}
+</style>
+
+<div id="loginView" class="wrap login" dir="rtl" lang="ar">
+  <form class="login-card" id="loginForm" autocomplete="off">
+    <div class="brand"><i></i>EasyPak · الدمام</div>
+    <h1 style="font-size:1.4rem">وسطاء مستودع الدمام</h1>
+    <div class="field"><label for="lu">اسم المستخدم</label><input class="input" id="lu" name="u" dir="ltr" autocapitalize="none" spellcheck="false"></div>
+    <div class="field"><label for="lp">كلمة المرور</label><input class="input" id="lp" name="p" type="password" dir="ltr"></div>
+    <p class="err" id="loginErr" hidden>اسم المستخدم أو كلمة المرور غير صحيحة. حاول مرة أخرى.</p>
+    <button class="btn btn-primary" type="submit">دخول</button>
+  </form>
+</div>
+
+<div id="appView" dir="rtl" lang="ar" hidden>
+  <header class="band">
+    <div class="wrap">
+      <div class="band-top">
+        <div class="brand"><i></i>EasyPak · الدمام</div>
+        <button class="btn btn-ghost btn-sm" id="logout" type="button">تسجيل الخروج</button>
+      </div>
+      <h1>وسطاء لتأجير المستودع القديم</h1>
+      <p>مكاتب تسويق عقاري قريبة من فرعنا الجديد، نتواصل معها لتسويق المستودع القديم وإيجاد مستأجر.</p>
+      <div class="branch">
+        <span>الفرع الجديد: <b>ضاحية الملك فهد، الدمام</b></span>
+        <span class="num">26.39547, 50.00667</span>
+        <a href="https://maps.app.goo.gl/1Lxrki9YgJsmM2ZC6" target="_blank" rel="noopener">فتح في الخريطة ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section aria-labelledby="h-search">
+        <div class="sec-head"><h2 id="h-search">ابحث في خرائط Google حول الفرع الجديد</h2></div>
+        <p class="hint">كل زر يفتح خرائط Google على الفرع الجديد مع البحث جاهز. افتح المكتب لترى رقمه وتقييمه، ثم أضفه للقائمة أدناه لنتابع التواصل.</p>
+        <div class="radius" role="group" aria-label="مستوى التقريب">
+          <span>نطاق الخريطة:</span>
+          <button class="chip" type="button" data-zoom="15" aria-pressed="false">قريب جدًا (~2 كم)</button>
+          <button class="chip" type="button" data-zoom="14" aria-pressed="true">قريب (~5 كم)</button>
+          <button class="chip" type="button" data-zoom="13" aria-pressed="false">أوسع (~10 كم)</button>
+        </div>
+        <div class="queries" id="queries"></div>
+      </section>
+
+      <section aria-labelledby="h-list">
+        <div class="sec-head">
+          <h2 id="h-list">قائمة التواصل</h2>
+          <span class="muted" id="countLine"></span>
+        </div>
+        <div class="chips" id="filters" role="group" aria-label="تصفية حسب الحالة"></div>
+
+        <details class="add" id="addBox">
+          <summary>إضافة مكتب</summary>
+          <form class="add-form" id="addForm">
+            <div class="field"><label for="fName">اسم المكتب</label><input class="input" id="fName" required placeholder="مثال: مكتب ... للعقارات"></div>
+            <div class="row2">
+              <div class="field"><label for="fPhone">رقم الجوال أو الهاتف</label><input class="input num" id="fPhone" inputmode="tel" placeholder="05xxxxxxxx"></div>
+              <div class="field"><label for="fArea">الحي</label><input class="input" id="fArea" placeholder="مثال: الفيصلية"></div>
+            </div>
+            <div class="field"><label for="fMap">رابط خرائط Google أو الإحداثيات</label><input class="input num" id="fMap" placeholder="https://www.google.com/maps/place/... أو 26.40, 50.01"></div>
+            <p class="note">لحساب المسافة: من خرائط Google اضغط «مشاركة» ثم انسخ الرابط، أو انسخ الإحداثيات بالضغط المطوّل على الموقع. الروابط المختصرة تُحفظ لكن بدون مسافة.</p>
+            <div class="field"><label for="fNotes">ملاحظات</label><textarea class="input" id="fNotes" placeholder="تقييم Google، تخصص المكتب (تجاري، مستودعات)..."></textarea></div>
+            <p class="err" id="addErr" hidden></p>
+            <button class="btn btn-primary" type="submit" id="addBtn">حفظ المكتب</button>
+          </form>
+        </details>
+
+        <div class="toolbar">
+          <input class="input" id="search" type="search" placeholder="بحث بالاسم أو الحي أو الرقم">
+          <select class="input" id="sort" style="flex:0 0 auto;width:auto" aria-label="الترتيب">
+            <option value="dist">الأقرب أولًا</option>
+            <option value="status">حسب الحالة</option>
+            <option value="recent">آخر تحديث</option>
+          </select>
+        </div>
+
+        <div class="list" id="list"></div>
+        <p class="note" id="dbNote" hidden></p>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script>
+/* GitHub Pages: the list is kept in this browser's localStorage (one list per device). */
+(function(){
+  var KEY = 'ep-offices', listeners = [];
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ return {}; } }
+  function persist(all){ try{ localStorage.setItem(KEY, JSON.stringify(all)); }catch(e){ return Promise.reject({code:'unavailable'}); } emit(all); return Promise.resolve(); }
+  function emit(all){ var docs = Object.keys(all).map(function(id){ return {id:id, data:function(){ return all[id]; }}; }); listeners.forEach(function(fn){ fn({docs:docs}); }); }
+  function newId(){ return Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+  var col = {
+    doc: function(id){ return {
+      update: function(p){ var all = load(); if(!all[id]) return Promise.reject({code:'invalid_argument'}); Object.assign(all[id], p); return persist(all); },
+      delete: function(){ var all = load(); delete all[id]; return persist(all); }
+    }; },
+    add: function(body){ var all = load(); all[newId()] = body; return persist(all); },
+    onSnapshot: function(next){ listeners.push(next); setTimeout(function(){ emit(load()); }, 0); return function(){}; }
+  };
+  window.addEventListener('storage', function(e){ if(e.key === KEY) emit(load()); });
+  window.claude = { use: function(name){ return Promise.resolve(name === 'db' ? { collection: function(){ return col; } } : null); } };
+})();
+</script>
+<div class="toast" id="toast" hidden><span id="toastText"></span></div>
+
+<script>
+(function(){
+  var BRANCH = {lat:26.3954736, lng:50.0066698};
+  var USER = 'admin', PASS = '123';
+  var STATUSES = [
+    {id:'new', label:'لم نتواصل', c:'--s-new'},
+    {id:'noanswer', label:'لم يرد', c:'--s-noanswer'},
+    {id:'called', label:'تم الاتصال', c:'--s-called'},
+    {id:'interested', label:'مهتم', c:'--s-interested'},
+    {id:'declined', label:'غير مهتم', c:'--s-declined'}
+  ];
+  var STATUS_ORDER = {interested:0, called:1, noanswer:2, 'new':3, declined:4};
+  var QUERIES = [
+    {q:'مكاتب تسويق عقاري', sub:'البحث الأساسي', top:true},
+    {q:'تأجير مستودعات', sub:'متخصصون في المستودعات', top:true},
+    {q:'عقارات تجارية', sub:'محلات ومستودعات وأراضٍ'},
+    {q:'مكتب عقار', sub:'مكاتب العقار العامة'},
+    {q:'وسيط عقاري', sub:'وسطاء مرخصون'},
+    {q:'شركة تسويق عقاري', sub:'شركات أكبر'}
+  ];
+
+  var $ = function(id){ return document.getElementById(id); };
+  var zoom = 14, filter = 'all', offices = [], db = null, col = null, canWrite = true, pendingDelete = null;
+
+  function store(k, v){ try{ if(v === undefined) return sessionStorage.getItem(k); if(v === null) sessionStorage.removeItem(k); else sessionStorage.setItem(k, v); }catch(e){ return null; } }
+
+  /* ---------- login ---------- */
+  function showApp(){ $('loginView').hidden = true; $('appView').hidden = false; startDb(); }
+  $('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if($('lu').value.trim().toLowerCase() === USER && $('lp').value === PASS){ store('ep-auth','1'); $('loginErr').hidden = true; showApp(); }
+    else { $('loginErr').hidden = false; $('lp').value = ''; $('lp').focus(); }
+  });
+  $('logout').addEventListener('click', function(){ store('ep-auth', null); $('appView').hidden = true; $('loginView').hidden = false; $('lp').value = ''; });
+
+  /* ---------- Google Maps searches ---------- */
+  function renderQueries(){
+    $('queries').innerHTML = '';
+    QUERIES.forEach(function(item){
+      var a = document.createElement('a');
+      a.className = 'q' + (item.top ? ' top' : '');
+      a.target = '_blank'; a.rel = 'noopener';
+      a.href = 'https://www.google.com/maps/search/' + encodeURIComponent(item.q) + '/@' + BRANCH.lat + ',' + BRANCH.lng + ',' + zoom + 'z';
+      var t = document.createElement('span'); t.textContent = item.q;
+      var s = document.createElement('small'); s.textContent = item.sub; t.appendChild(s);
+      var ar = document.createElement('span'); ar.className = 'arrow'; ar.textContent = '↗';
+      a.appendChild(t); a.appendChild(ar);
+      $('queries').appendChild(a);
+    });
+  }
+  document.querySelectorAll('[data-zoom]').forEach(function(b){
+    b.addEventListener('click', function(){
+      zoom = +b.dataset.zoom;
+      document.querySelectorAll('[data-zoom]').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      renderQueries();
+    });
+  });
+
+  /* ---------- helpers ---------- */
+  function toLatin(s){ return String(s || '').replace(/[٠-٩]/g, function(d){ return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); }).replace(/[۰-۹]/g, function(d){ return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); }); }
+  function normPhone(p){
+    var d = toLatin(p).replace(/[^\d]/g, '');
+    if(!d) return '';
+    if(d.indexOf('00') === 0) d = d.slice(2);
+    if(d.indexOf('966') === 0) return d;
+    if(d.charAt(0) === '0') return '966' + d.slice(1);
+    if(d.length === 9) return '966' + d;
+    return d;
+  }
+  function isMobile(n){ return /^9665\d{8}$/.test(n); }
+  function prettyPhone(n){
+    if(/^9665\d{8}$/.test(n)) return '0' + n.slice(3,5) + ' ' + n.slice(5,8) + ' ' + n.slice(8);
+    if(/^9661\d{8}$/.test(n)) return '0' + n.slice(3,5) + ' ' + n.slice(5,8) + ' ' + n.slice(8);
+    if(/^9669200\d{5}$/.test(n)) return n.slice(3,7) + ' ' + n.slice(7,10) + ' ' + n.slice(10);
+    return n ? '+' + n : '';
+  }
+  function parseCoords(s){
+    s = toLatin(s);
+    var m = s.match(/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/) || s.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/) || s.match(/[?&](?:q|ll|query)=(-?\d+\.\d+),\s*(-?\d+\.\d+)/) || s.match(/^\s*(-?\d{1,2}\.\d+)\s*[, ،]\s*(-?\d{1,3}\.\d+)\s*$/);
+    if(!m) return null;
+    var lat = +m[1], lng = +m[2];
+    if(Math.abs(lat) > 90 || Math.abs(lng) > 180) return null;
+    return {lat:lat, lng:lng};
+  }
+  function km(a, b){
+    var R = 6371, toR = Math.PI/180;
+    var dLat = (b.lat-a.lat)*toR, dLng = (b.lng-a.lng)*toR;
+    var h = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(a.lat*toR)*Math.cos(b.lat*toR)*Math.sin(dLng/2)*Math.sin(dLng/2);
+    return 2*R*Math.asin(Math.sqrt(h));
+  }
+  function statusOf(id){ for(var i=0;i<STATUSES.length;i++) if(STATUSES[i].id === id) return STATUSES[i]; return STATUSES[0]; }
+  function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+  var toastTimer;
+  function toast(msg){ $('toastText').textContent = msg; $('toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function(){ $('toast').hidden = true; }, 2200); }
+  function copy(text, input){
+    var done = function(){ toast('تم نسخ الرقم'); };
+    try{ navigator.clipboard.writeText(text).then(done, function(){ selectText(input); }); }catch(e){ selectText(input); }
+  }
+  function selectText(node){ try{ var r = document.createRange(); r.selectNodeContents(node); var s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('الرقم محدد، انسخه يدويًا'); }catch(e){} }
+
+  /* ---------- filters ---------- */
+  function renderFilters(){
+    var counts = {all: offices.length};
+    STATUSES.forEach(function(s){ counts[s.id] = 0; });
+    offices.forEach(function(o){ counts[o.status || 'new']++; });
+    var box = $('filters'); box.innerHTML = '';
+    [{id:'all', label:'الكل'}].concat(STATUSES).forEach(function(s){
+      var b = el('button', 'chip'); b.type = 'button';
+      b.setAttribute('aria-pressed', filter === s.id ? 'true' : 'false');
+      if(s.c){ var d = el('span','dot'); d.style.setProperty('--c', 'var(' + s.c + ')'); b.appendChild(d); }
+      b.appendChild(document.createTextNode(s.label + ' '));
+      b.appendChild(el('span','n', String(counts[s.id])));
+      b.addEventListener('click', function(){ filter = s.id; renderFilters(); renderList(); });
+      box.appendChild(b);
+    });
+    var withPhone = offices.filter(function(o){ return o.phone; }).length;
+    $('countLine').textContent = offices.length ? (offices.length + ' مكتب · ' + withPhone + ' برقم') : '';
+  }
+
+  /* ---------- list ---------- */
+  function renderList(){
+    var box = $('list'); box.innerHTML = '';
+    if(!offices.length){
+      var e = el('div','empty');
+      e.appendChild(el('strong', null, 'لا توجد مكاتب بعد'));
+      e.appendChild(el('p', null, 'ابحث في خرائط Google بالأزرار أعلاه، ثم اضغط «إضافة مكتب» واكتب الاسم والرقم. سيظهر هنا زر اتصال وواتساب والمسافة من الفرع الجديد، والقائمة محفوظة على هذا الجهاز.'));
+      if(!db) e.appendChild(el('p', 'note', 'القائمة محفوظة في هذا المتصفح فقط.'));
+      box.appendChild(e); return;
+    }
+    var q = toLatin($('search').value.trim().toLowerCase());
+    var rows = offices.filter(function(o){
+      if(filter !== 'all' && (o.status || 'new') !== filter) return false;
+      if(!q) return true;
+      return [o.name, o.area, o.phone, o.notes].join(' ').toLowerCase().indexOf(q) !== -1;
+    });
+    var sort = $('sort').value;
+    rows.sort(function(a, b){
+      if(sort === 'status'){ var s = STATUS_ORDER[a.status||'new'] - STATUS_ORDER[b.status||'new']; if(s) return s; }
+      if(sort === 'recent') return (b.updatedAt||0) - (a.updatedAt||0);
+      var da = a._km == null ? 1e9 : a._km, dbb = b._km == null ? 1e9 : b._km;
+      return da - dbb;
+    });
+    if(!rows.length){ box.appendChild(el('p','note','لا توجد نتائج لهذا البحث أو التصفية.')); return; }
+    rows.forEach(function(o){ box.appendChild(card(o)); });
+  }
+
+  function card(o){
+    var st = statusOf(o.status);
+    var c = el('article','office'); c.style.setProperty('--c', 'var(' + st.c + ')');
+
+    var head = el('div','o-head');
+    var left = el('div'); left.style.minWidth = '0';
+    left.appendChild(el('h3','o-name', o.name));
+    var meta = el('div','o-meta');
+    if(o.area) meta.appendChild(el('span', null, o.area));
+    if(o.updatedAt) meta.appendChild(el('span', null, 'آخر تحديث ' + new Date(o.updatedAt).toLocaleDateString('ar-SA-u-ca-gregory', {day:'numeric', month:'short'})));
+    left.appendChild(meta);
+    head.appendChild(left);
+    head.appendChild(el('span','dist', o._km == null ? '— كم' : (o._km < 10 ? o._km.toFixed(1) : Math.round(o._km)) + ' كم'));
+    c.appendChild(head);
+
+    if(o.phone){
+      var ph = el('div','phone');
+      var num = el('span','num', prettyPhone(o.phone));
+      ph.appendChild(num);
+      ph.appendChild(el('span','tag', isMobile(o.phone) ? 'جوال · غالبًا واتساب' : 'هاتف أرضي'));
+      var cp = el('button','btn btn-ghost btn-sm','نسخ'); cp.type = 'button';
+      cp.addEventListener('click', function(){ copy(prettyPhone(o.phone).replace(/\s/g, ''), num); });
+      ph.appendChild(cp);
+      c.appendChild(ph);
+    } else {
+      c.appendChild(el('p','note','لا يوجد رقم. افتح المكتب في الخريطة وأضف رقمه في الملاحظات أو أعد إضافته.'));
+    }
+
+    var act = el('div','actions');
+    var call = el('a','btn','اتصال'); call.href = 'tel:+' + o.phone; if(!o.phone) call.setAttribute('aria-disabled','true');
+    var wa = el('a','btn btn-wa','واتساب'); wa.href = 'https://wa.me/' + o.phone; wa.target = '_blank'; wa.rel = 'noopener';
+    if(!o.phone || !isMobile(o.phone)) wa.setAttribute('aria-disabled','true');
+    var map = el('a','btn','الخريطة ↗'); map.target = '_blank'; map.rel = 'noopener';
+    map.href = o.mapUrl && /^https?:\/\//.test(o.mapUrl) ? o.mapUrl : (o.lat != null ? 'https://www.google.com/maps/search/?api=1&query=' + o.lat + ',' + o.lng : 'https://www.google.com/maps/search/' + encodeURIComponent(o.name + ' الدمام'));
+    act.appendChild(call); act.appendChild(wa); act.appendChild(map);
+    c.appendChild(act);
+
+    var foot = el('div','o-foot');
+    var sel = el('select'); sel.setAttribute('aria-label','حالة التواصل');
+    STATUSES.forEach(function(s){ var op = el('option', null, s.label); op.value = s.id; if(s.id === (o.status||'new')) op.selected = true; sel.appendChild(op); });
+    sel.disabled = !db || !canWrite;
+    sel.addEventListener('change', function(){ save(o.id, {status: sel.value}, 'تم تحديث الحالة'); });
+    var notes = el('textarea','input'); notes.value = o.notes || ''; notes.placeholder = 'ملاحظات المكالمة'; notes.rows = 1;
+    notes.disabled = !db || !canWrite;
+    notes.addEventListener('change', function(){ if(notes.value !== (o.notes||'')) save(o.id, {notes: notes.value}, 'تم حفظ الملاحظة'); });
+    foot.appendChild(sel); foot.appendChild(notes);
+    c.appendChild(foot);
+
+    if(db && canWrite){
+      var del = el('div','del');
+      if(pendingDelete === o.id){
+        del.appendChild(el('span','muted','حذف هذا المكتب نهائيًا؟'));
+        var yes = el('button','btn btn-sm','حذف'); yes.type = 'button'; yes.style.color = 'var(--s-declined)';
+        yes.addEventListener('click', function(){ pendingDelete = null; col.doc(o.id).delete().then(function(){ toast('تم الحذف'); }, function(){ toast('تعذر الحذف، حاول مرة أخرى'); }); });
+        var no = el('button','btn btn-ghost btn-sm','إلغاء'); no.type = 'button';
+        no.addEventListener('click', function(){ pendingDelete = null; renderList(); });
+        del.appendChild(yes); del.appendChild(no);
+      } else {
+        var d = el('button','btn btn-ghost btn-sm','حذف'); d.type = 'button';
+        d.addEventListener('click', function(){ pendingDelete = o.id; renderList(); });
+        del.appendChild(d);
+      }
+      c.appendChild(del);
+    }
+    return c;
+  }
+
+  /* ---------- db ---------- */
+  var saving = {};
+  function save(id, patch, msg){
+    if(saving[id]){ toast('انتظر لحظة، يتم الحفظ'); return; }
+    saving[id] = true;
+    patch.updatedAt = Date.now();
+    col.doc(id).update(patch).then(function(){ toast(msg); }, function(e){
+      if(e && e.code === 'invalid_argument'){ canWrite = false; renderList(); toast('ليست لديك صلاحية التعديل'); }
+      else toast('تعذر الحفظ، حاول مرة أخرى');
+    }).then(function(){ saving[id] = false; });
+  }
+
+  var started = false;
+  function startDb(){
+    if(started) return; started = true;
+    renderFilters(); renderList();
+    if(!window.claude || !window.claude.use){ dbUnavailable(); return; }
+    window.claude.use('db').then(function(d){
+      if(!d){ dbUnavailable(); return; }
+      db = d; col = db.collection('offices');
+      col.onSnapshot(function(snap){
+        offices = snap.docs.map(function(doc){
+          var o = Object.assign({id: doc.id}, doc.data());
+          o._km = (typeof o.lat === 'number' && typeof o.lng === 'number') ? km(BRANCH, o) : null;
+          return o;
+        });
+        renderFilters(); renderList();
+      }, function(){ dbUnavailable(); });
+    }, dbUnavailable);
+  }
+  function dbUnavailable(){
+    db = null;
+    $('dbNote').hidden = false;
+    $('dbNote').textContent = 'تعذر الحفظ في هذا المتصفح. أوقف وضع التصفح الخاص ثم حاول مرة أخرى.';
+    $('addBtn').disabled = true;
+    renderList();
+  }
+
+  $('addForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = $('addErr'); err.hidden = true;
+    if(!db){ err.textContent = 'تعذر الحفظ في هذا المتصفح.'; err.hidden = false; return; }
+    var name = $('fName').value.trim();
+    if(!name){ err.textContent = 'اكتب اسم المكتب.'; err.hidden = false; return; }
+    var phone = normPhone($('fPhone').value);
+    if($('fPhone').value.trim() && phone.length < 11){ err.textContent = 'الرقم غير مكتمل. اكتبه مثل 0551234567 أو 0138123456.'; err.hidden = false; return; }
+    var mapUrl = $('fMap').value.trim();
+    var coords = parseCoords(mapUrl);
+    var dup = phone && offices.some(function(o){ return o.phone === phone; });
+    if(dup){ err.textContent = 'هذا الرقم موجود في القائمة بالفعل.'; err.hidden = false; return; }
+    var body = {name:name, phone:phone, area:$('fArea').value.trim(), mapUrl:/^https?:\/\//.test(mapUrl) ? mapUrl : '', notes:$('fNotes').value.trim(), status:'new', source:'manual', createdAt:Date.now(), updatedAt:Date.now()};
+    if(coords){ body.lat = coords.lat; body.lng = coords.lng; }
+    $('addBtn').disabled = true;
+    col.add(body).then(function(){
+      $('addForm').reset(); toast(coords ? 'تمت إضافة المكتب' : 'تمت الإضافة بدون مسافة');
+    }, function(e){
+      err.textContent = e && e.code === 'invalid_argument' ? 'ليست لديك صلاحية الإضافة. اطلب من صاحب الصفحة صلاحية «مساهم».' : (e && e.code === 'quota_exceeded' ? 'القائمة ممتلئة. احذف مكاتب غير مهمة ثم حاول.' : 'تعذر الحفظ، حاول مرة أخرى.');
+      err.hidden = false;
+    }).then(function(){ $('addBtn').disabled = false; });
+  });
+
+  $('search').addEventListener('input', renderList);
+  $('sort').addEventListener('change', renderList);
+
+  document.documentElement.setAttribute('dir','rtl');
+  document.documentElement.setAttribute('lang','ar');
+  renderQueries();
+  if(store('ep-auth') === '1') showApp();
+})();
+</script>
+
+</body>
+</html>
